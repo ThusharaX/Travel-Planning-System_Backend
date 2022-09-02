@@ -77,3 +77,5 @@ export const searchSamples = async (request, response, next) => {
 			next();
 		});
 };
+
+// Test
