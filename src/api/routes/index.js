@@ -17,4 +17,12 @@ router.put("/sample/:id", controller.updateSample); // update one sample
 router.delete("/sample/:id", controller.deleteSample); // delete one sample
 router.get("/sample/search/:search", controller.searchSamples); // search samples
 
+// Hotel Packages endpoints
+router.post("/hotel-package/", controller.insertHotelPackage); // insert one hotel package
+router.get("/hotel-package/", controller.getAllHotelPackages); // get all hotel packages
+router.get("/hotel-package/:id", controller.getOneHotelPackage); // get one hotel package
+router.put("/hotel-package/:id", controller.updateHotelPackage); // update one hotel package
+router.delete("/hotel-package/:id", controller.deleteHotelPackage); // delete one hotel package
+router.get("/hotel-package/search/:search", controller.searchHotelPackages); // search hotel packages
+
 export default router;
