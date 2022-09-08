@@ -40,3 +40,30 @@ export const getOneTourPackage = async (request, response, next) => {
 			next();
 		});
 };
+
+// Update one tour package
+
+export const updateTourPackage = async (request, response, next) => {
+	await TourPackageService.updateTourPackage(request.params.id, request.body)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Delete on tour pacakge
+export const deleteTourPacakge = async (request, response, next) => {
+	await TourPackageService.deleteTourPacakge(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
