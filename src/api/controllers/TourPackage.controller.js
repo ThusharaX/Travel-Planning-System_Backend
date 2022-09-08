@@ -13,3 +13,12 @@ export const insertTourPackage = async (request, response, next) => {
 			next();
 		});
 };
+
+// Get all Tour Pacakges
+
+export const getAllTourPackages = async (request, response, next) => {
+	await TourPackageService.getAllTourPackages("users").then(async (data) => {
+		request.handleResponse.successRespond(response)(data);
+		next();
+	});
+};
