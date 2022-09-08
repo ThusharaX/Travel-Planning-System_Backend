@@ -29,5 +29,6 @@ router.get("/hotel-package/search/:search", controller.searchHotelPackages); // 
 
 router.post("/tour-package/", controller.insertTourPackage);
 router.get("/tour-package/", controller.getAllTourPackages);
+router.get("/tour-package/:id", controller.getOneTourPackage);
 
 export default router;

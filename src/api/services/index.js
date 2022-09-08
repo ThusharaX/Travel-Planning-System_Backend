@@ -9,7 +9,7 @@ import {
 	searchHotelPackages,
 } from "./HotelPackage.service";
 
-import { insertTourPackage, getAllTourPackages } from "./TourPackage.service";
+import { insertTourPackage, getAllTourPackages, getOneTourPackage } from "./TourPackage.service";
 
 export default {
 	// Sample services
@@ -31,4 +31,5 @@ export default {
 	// Tour Package Service
 	insertTourPackage,
 	getAllTourPackages,
+	getOneTourPackage,
 };
