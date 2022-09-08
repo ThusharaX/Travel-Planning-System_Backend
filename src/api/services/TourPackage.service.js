@@ -74,7 +74,10 @@ export const deleteTourPacakge = async (tour_packageId) => {
 // Search Tour Pacakge name or description
 export const searchTourPacakges = async (searchTerm) => {
 	return await TourPackageModel.find({
-		$or: [{ name: { $regex: searchTerm, $options: "i" } }, { description: { $regex: searchTerm, $options: "i" } }],
+		$or: [
+			{ tourPackageName: { $regex: searchTerm, $options: "i" } },
+			{ description: { $regex: searchTerm, $options: "i" } },
+		],
 	})
 		.then((tour_packages) => {
 			return tour_packages;
