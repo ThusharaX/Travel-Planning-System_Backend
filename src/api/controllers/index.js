@@ -8,6 +8,15 @@ import {
 } from "./Sample.controller";
 
 import {
+	insertVehicle,
+	getAllVehicles,
+	getOneVehicle,
+	updateVehicle,
+	deleteVehicle,
+	searchVehicles,
+} from "./Vehicle.controller";
+
+import {
 	insertHotelPackage,
 	getAllHotelPackages,
 	getOneHotelPackage,
@@ -24,6 +33,14 @@ export default {
 	updateSample,
 	deleteSample,
 	searchSamples,
+
+	//vehicle Controllers
+	insertVehicle,
+	getAllVehicles,
+	getOneVehicle,
+	updateVehicle,
+	deleteVehicle,
+	searchVehicles,
 
 	// Hotel Package Controllers
 	insertHotelPackage,
