@@ -1,8 +1,8 @@
-import SampleService from "../services";
+import HotelPackageService from "../services";
 
-// Insert one sample
-export const insertSample = async (request, response, next) => {
-	await SampleService.insertSample(request.body)
+// Insert one hotel package
+export const insertHotelPackage = async (request, response, next) => {
+	await HotelPackageService.insertHotelPackage(request.body)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -13,9 +13,9 @@ export const insertSample = async (request, response, next) => {
 		});
 };
 
-// Get all samples
-export const getAllSamples = async (request, response, next) => {
-	await SampleService.getAllSamples("users")
+// Get all hotel packages
+export const getAllHotelPackages = async (request, response, next) => {
+	await HotelPackageService.getAllHotelPackages("users")
 		.then(async (data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -26,9 +26,9 @@ export const getAllSamples = async (request, response, next) => {
 		});
 };
 
-// Get one sample
-export const getOneSample = async (request, response, next) => {
-	await SampleService.getOneSample(request.params.id)
+// Get one hotel package
+export const getOneHotelPackage = async (request, response, next) => {
+	await HotelPackageService.getOneHotelPackage(request.params.id)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -39,9 +39,9 @@ export const getOneSample = async (request, response, next) => {
 		});
 };
 
-// Update one sample
-export const updateSample = async (request, response, next) => {
-	await SampleService.updateSample(request.params.id, request.body)
+// Update one hotel package
+export const updateHotelPackage = async (request, response, next) => {
+	await HotelPackageService.updateHotelPackage(request.params.id, request.body)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -52,9 +52,9 @@ export const updateSample = async (request, response, next) => {
 		});
 };
 
-// Delete one sample
-export const deleteSample = async (request, response, next) => {
-	await SampleService.deleteSample(request.params.id)
+// Delete one hotel package
+export const deleteHotelPackage = async (request, response, next) => {
+	await HotelPackageService.deleteHotelPackage(request.params.id)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -65,9 +65,9 @@ export const deleteSample = async (request, response, next) => {
 		});
 };
 
-// Search samples
-export const searchSamples = async (request, response, next) => {
-	await SampleService.searchSamples(request.params.search)
+// Search hotel packages
+export const searchHotelPackages = async (request, response, next) => {
+	await HotelPackageService.searchHotelPackages(request.params.search)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -77,5 +77,3 @@ export const searchSamples = async (request, response, next) => {
 			next();
 		});
 };
-
-// Test

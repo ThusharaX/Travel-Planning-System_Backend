@@ -25,4 +25,12 @@ router.put("/vehicle/:id", controller.updateVehicle); // update one vehicles
 router.delete("/vehicle/:id", controller.deleteVehicle); // delete one vehicles
 router.get("/vehicle/search/:search", controller.searchVehicles); // search vehicles
 
+// Hotel Packages endpoints
+router.post("/hotel-package/", controller.insertHotelPackage); // insert one hotel package
+router.get("/hotel-package/", controller.getAllHotelPackages); // get all hotel packages
+router.get("/hotel-package/:id", controller.getOneHotelPackage); // get one hotel package
+router.put("/hotel-package/:id", controller.updateHotelPackage); // update one hotel package
+router.delete("/hotel-package/:id", controller.deleteHotelPackage); // delete one hotel package
+router.get("/hotel-package/search/:search", controller.searchHotelPackages); // search hotel packages
+
 export default router;

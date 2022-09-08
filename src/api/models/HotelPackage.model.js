@@ -1,50 +1,39 @@
 const mongoose = require("mongoose");
 
-const TourPackageSchema = new mongoose.Schema({
-	tourPackageName: {
+const HotelPackageSchema = new mongoose.Schema({
+	name: {
 		type: String,
 		required: true,
 	},
-
-	guideName: {
-		type: String,
-		required: true,
-	},
-
-	email: {
-		type: String,
-		required: true,
-	},
-
-	contactNumber: {
-		type: Number,
-		required: true,
-	},
-
-	price: {
-		type: Number,
-		required: true,
-	},
-
-	NumberOfDays: {
-		type: Number,
-		required: true,
-	},
-
 	location: {
 		type: String,
 		required: true,
 	},
-
+	condition: {
+		type: String,
+		enum: ["AC", "Non-AC"],
+		required: true,
+	},
+	beds: {
+		type: Number,
+		required: true,
+	},
+	room_no: {
+		type: String,
+		required: true,
+	},
+	cost: {
+		type: Number,
+		required: true,
+	},
 	description: {
 		type: String,
 		required: true,
 	},
-
 	images: {
 		type: Array,
 		required: true,
 	},
 });
 
-module.exports = mongoose.model("TourPackage", TourPackageSchema);
+module.exports = mongoose.model("HotelPackage", HotelPackageSchema);

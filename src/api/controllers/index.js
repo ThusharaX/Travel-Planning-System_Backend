@@ -16,6 +16,15 @@ import {
 	searchVehicles,
 } from "./Vehicle.controller";
 
+import {
+	insertHotelPackage,
+	getAllHotelPackages,
+	getOneHotelPackage,
+	updateHotelPackage,
+	deleteHotelPackage,
+	searchHotelPackages,
+} from "./HotelPackage.controller";
+
 export default {
 	//Sample Controllers
 	insertSample,
@@ -32,4 +41,12 @@ export default {
 	updateVehicle,
 	deleteVehicle,
 	searchVehicles,
+
+	// Hotel Package Controllers
+	insertHotelPackage,
+	getAllHotelPackages,
+	getOneHotelPackage,
+	updateHotelPackage,
+	deleteHotelPackage,
+	searchHotelPackages,
 };
