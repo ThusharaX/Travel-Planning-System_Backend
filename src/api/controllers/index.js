@@ -25,6 +25,8 @@ import {
 	searchHotelPackages,
 } from "./HotelPackage.controller";
 
+import { insertTourPackage } from "./TourPackage.controller";
+
 export default {
 	//Sample Controllers
 	insertSample,
@@ -49,4 +51,7 @@ export default {
 	updateHotelPackage,
 	deleteHotelPackage,
 	searchHotelPackages,
+
+	// Tour Package Controller
+	insertTourPackage,
 };
