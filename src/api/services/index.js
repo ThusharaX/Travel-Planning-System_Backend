@@ -26,6 +26,14 @@ import {
 	searchCampingPackages,
 } from "./CampingPackageService";
 
+	insertTourPackage,
+	getAllTourPackages,
+	getOneTourPackage,
+	updateTourPackage,
+	deleteTourPacakge,
+} from "./TourPackage.service";
+
+
 export default {
 	// Sample services
 	insertSample,
@@ -51,6 +59,7 @@ export default {
 	deleteHotelPackage,
 	searchHotelPackages,
 
+
 	// Camping Package services
 	insertCampingPackage,
 	getAllCampingPackages,
@@ -58,4 +67,12 @@ export default {
 	updateCampingPackage,
 	deleteCampingPackage,
 	searchCampingPackages,
+
+	// Tour Package Service
+	insertTourPackage,
+	getAllTourPackages,
+	getOneTourPackage,
+	updateTourPackage,
+	deleteTourPacakge,
+
 };

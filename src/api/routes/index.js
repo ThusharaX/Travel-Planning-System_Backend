@@ -33,6 +33,7 @@ router.put("/hotel-package/:id", controller.updateHotelPackage); // update one h
 router.delete("/hotel-package/:id", controller.deleteHotelPackage); // delete one hotel package
 router.get("/hotel-package/search/:search", controller.searchHotelPackages); // search hotel packages
 
+
 // Camping Packages endpoints
 router.post("/camping-package/", controller.insertCampingPackage); // insert one Camping package
 router.get("/camping-package/", controller.getAllCampingPackages); // get all Camping packages
@@ -40,5 +41,14 @@ router.get("/camping-package/:id", controller.getOneCampingPackage); // get one 
 router.put("/camping-package/:id", controller.updateCampingPackage); // update one Camping package
 router.delete("/camping-package/:id", controller.deleteCampingPackage); // delete one Camping package
 router.get("/camping-package/search/:search", controller.searchCampingPackages); // search Camping packages
+
+// Tour Pacakges endpoints
+
+router.post("/tour-package/", controller.insertTourPackage);
+router.get("/tour-package/", controller.getAllTourPackages);
+router.get("/tour-package/:id", controller.getOneTourPackage);
+router.put("/tour-package/:id", controller.updateTourPackage);
+router.delete("/tour-package/:id", controller.deleteTourPacakge);
+
 
 export default router;
