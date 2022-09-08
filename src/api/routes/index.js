@@ -36,5 +36,6 @@ router.get("/hotel-package/search/:search", controller.searchHotelPackages); // 
 // Tour Pacakges endpoints
 
 router.post("/tour-package/", controller.insertTourPackage);
+router.get("/tour-package/", controller.getAllTourPackages);
 
 export default router;
