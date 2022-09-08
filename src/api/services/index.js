@@ -15,6 +15,7 @@ import {
 	getOneTourPackage,
 	updateTourPackage,
 	deleteTourPacakge,
+	searchTourPacakges,
 } from "./TourPackage.service";
 
 export default {
@@ -40,4 +41,5 @@ export default {
 	getOneTourPackage,
 	updateTourPackage,
 	deleteTourPacakge,
+	searchTourPacakges,
 };

@@ -26,11 +26,11 @@ router.delete("/hotel-package/:id", controller.deleteHotelPackage); // delete on
 router.get("/hotel-package/search/:search", controller.searchHotelPackages); // search hotel packages
 
 // Tour Pacakges endpoints
-
 router.post("/tour-package/", controller.insertTourPackage);
 router.get("/tour-package/", controller.getAllTourPackages);
 router.get("/tour-package/:id", controller.getOneTourPackage);
 router.put("/tour-package/:id", controller.updateTourPackage);
 router.delete("/tour-package/:id", controller.deleteTourPacakge);
+router.get("/tour-package/search/:search", controller.searchTourPacakges);
 
 export default router;

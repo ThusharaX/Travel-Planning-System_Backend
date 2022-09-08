@@ -22,6 +22,7 @@ import {
 	getOneTourPackage,
 	updateTourPackage,
 	deleteTourPacakge,
+	searchTourPacakges,
 } from "./TourPackage.controller";
 
 export default {
@@ -47,4 +48,5 @@ export default {
 	getOneTourPackage,
 	updateTourPackage,
 	deleteTourPacakge,
+	searchTourPacakges,
 };
