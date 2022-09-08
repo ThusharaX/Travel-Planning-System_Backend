@@ -27,3 +27,16 @@ export const getAllTourPackages = async (request, response, next) => {
 			next();
 		});
 };
+
+// Get one tour pacakges
+export const getOneTourPackage = async (request, response, next) => {
+	await TourPackageService.getOneTourPackage(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
