@@ -25,4 +25,8 @@ router.put("/hotel-package/:id", controller.updateHotelPackage); // update one h
 router.delete("/hotel-package/:id", controller.deleteHotelPackage); // delete one hotel package
 router.get("/hotel-package/search/:search", controller.searchHotelPackages); // search hotel packages
 
+// Tour Pacakges endpoints
+
+router.post("/tour-package/", controller.insertTourpackage);
+
 export default router;
