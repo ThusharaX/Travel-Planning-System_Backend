@@ -17,6 +17,15 @@ import {
 	searchHotelPackages,
 } from "./HotelPackage.service";
 
+import {
+	insertCampingPackage,
+	getAllCampingPackages,
+	getOneCampingPackage,
+	updateCampingPackage,
+	deleteCampingPackage,
+	searchCampingPackages,
+} from "./CampingPackageService";
+
 export default {
 	// Sample services
 	insertSample,
@@ -41,4 +50,12 @@ export default {
 	updateHotelPackage,
 	deleteHotelPackage,
 	searchHotelPackages,
+
+	// Camping Package services
+	insertCampingPackage,
+	getAllCampingPackages,
+	getOneCampingPackage,
+	updateCampingPackage,
+	deleteCampingPackage,
+	searchCampingPackages,
 };
