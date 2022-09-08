@@ -54,3 +54,16 @@ export const updateTourPackage = async (request, response, next) => {
 			next();
 		});
 };
+
+// Delete on tour pacakge
+export const deleteTourPacakge = async (request, response, next) => {
+	await TourPackageService.deleteTourPacakge(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
