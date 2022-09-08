@@ -9,6 +9,8 @@ import {
 	searchHotelPackages,
 } from "./HotelPackage.service";
 
+import { insertTourPackage } from "./TourPackage.service";
+
 export default {
 	// Sample services
 	insertSample,
@@ -25,4 +27,7 @@ export default {
 	updateHotelPackage,
 	deleteHotelPackage,
 	searchHotelPackages,
+
+	// Tour Package Service
+	insertTourPackage,
 };
