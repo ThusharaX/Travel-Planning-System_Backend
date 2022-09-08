@@ -67,3 +67,16 @@ export const deleteTourPacakge = async (request, response, next) => {
 			next();
 		});
 };
+
+// Search Tour Pacakges
+export const searchTourPacakges = async (request, response, next) => {
+	await TourPackageService.searchTourPacakges(request.params.search)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};

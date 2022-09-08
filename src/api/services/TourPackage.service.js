@@ -70,3 +70,19 @@ export const deleteTourPacakge = async (tour_packageId) => {
 			throw new Error(error.message);
 		});
 };
+
+// Search Tour Pacakge name or description
+export const searchTourPacakges = async (searchTerm) => {
+	return await TourPackageModel.find({
+		$or: [
+			{ tourPackageName: { $regex: searchTerm, $options: "i" } },
+			{ description: { $regex: searchTerm, $options: "i" } },
+		],
+	})
+		.then((tour_packages) => {
+			return tour_packages;
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};
