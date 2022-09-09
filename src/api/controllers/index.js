@@ -34,6 +34,8 @@ import {
 	searchTourPacakges,
 } from "./TourPackage.controller";
 
+import { loginHotelOwner, registerHotelOwner } from "./HotelOwner.controller";
+
 export default {
 	//Sample Controllers
 	insertSample,
@@ -66,4 +68,8 @@ export default {
 	updateTourPackage,
 	deleteTourPacakge,
 	searchTourPacakges,
+
+	// Hotel Owner Controller
+	loginHotelOwner,
+	registerHotelOwner,
 };
