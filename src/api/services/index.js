@@ -26,6 +26,8 @@ import {
 	searchTourPacakges,
 } from "./TourPackage.service";
 
+import { authenticateHotelOwner, insertHotelOwner } from "./HotelOwner.service";
+
 export default {
 	// Sample services
 	insertSample,
@@ -58,4 +60,8 @@ export default {
 	updateTourPackage,
 	deleteTourPacakge,
 	searchTourPacakges,
+
+	// Hotel Owner Service
+	authenticateHotelOwner,
+	insertHotelOwner,
 };
