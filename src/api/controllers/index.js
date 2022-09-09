@@ -25,7 +25,7 @@ import {
 	searchHotelPackages,
 } from "./HotelPackage.controller";
 
-
+import {
 	insertCampingPackage,
 	getAllCampingPackages,
 	getOneCampingPackage,
@@ -34,12 +34,13 @@ import {
 	searchCampingPackages,
 } from "./CampingPackage.controller";
 
+import {
 	insertTourPackage,
 	getAllTourPackages,
 	getOneTourPackage,
 	updateTourPackage,
 	deleteTourPacakge,
-
+} from "./TourPackage.controller";
 
 export default {
 	//Sample Controllers
@@ -66,7 +67,6 @@ export default {
 	deleteHotelPackage,
 	searchHotelPackages,
 
-
 	// Camping Package Controllers
 	insertCampingPackage,
 	getAllCampingPackages,
@@ -81,5 +81,4 @@ export default {
 	getOneTourPackage,
 	updateTourPackage,
 	deleteTourPacakge,
-
 };
