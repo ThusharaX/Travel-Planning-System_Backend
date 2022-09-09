@@ -1,5 +1,6 @@
 import { Router } from "express";
 import controller from "../controllers";
+import middleware from "../middleware";
 
 const router = Router();
 
@@ -26,7 +27,7 @@ router.delete("/vehicle/:id", controller.deleteVehicle); // delete one vehicles
 router.get("/vehicle/search/:search", controller.searchVehicles); // search vehicles
 
 // Hotel Packages endpoints
-router.post("/hotel-package/", controller.insertHotelPackage); // insert one hotel package
+router.post("/hotel-package/", middleware.hotel_owner_auth, controller.insertHotelPackage); // insert one hotel package
 router.get("/hotel-package/", controller.getAllHotelPackages); // get all hotel packages
 router.get("/hotel-package/:id", controller.getOneHotelPackage); // get one hotel package
 router.put("/hotel-package/:id", controller.updateHotelPackage); // update one hotel package
@@ -40,5 +41,9 @@ router.get("/tour-package/:id", controller.getOneTourPackage);
 router.put("/tour-package/:id", controller.updateTourPackage);
 router.delete("/tour-package/:id", controller.deleteTourPacakge);
 router.get("/tour-package/search/:search", controller.searchTourPacakges);
+
+// Hotel Owner endpoints
+router.post("/hotel-owner/login", controller.loginHotelOwner);
+router.post("/hotel-owner/register", controller.registerHotelOwner);
 
 export default router;
