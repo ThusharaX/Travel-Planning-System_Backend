@@ -1,0 +1,73 @@
+const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
+import jwt from "jsonwebtoken";
+
+const TourGuideSchema = new mongoose.Schema(
+	{
+		tourGuideName: {
+			type: String,
+			required: true,
+		},
+
+		email: {
+			type: String,
+			required: true,
+		},
+		nic: {
+			type: String,
+			required: true,
+		},
+		contactNumber: {
+			type: String,
+			required: true,
+		},
+
+		profilePicture: {
+			type: String,
+		},
+
+		password: {
+			type: String,
+			required: true,
+		},
+		permissionLevel: {
+			type: String,
+			default: "TOUR_GUIDE",
+			required: true,
+		},
+		authToken: {
+			type: String,
+			required: false,
+		},
+		deletedAt: {
+			type: Date,
+			required: false,
+			default: null,
+		},
+	},
+	{
+		timestamps: true,
+	}
+);
+
+TourGuideSchema.methods.generateAuthToken = async function () {
+	const user = this;
+	const secret = process.env.JWT_SECRET;
+
+	const authToken = jwt.sign(
+		{
+			id: user._id,
+			permissionLevel: user.permissionLevel,
+		},
+		secret
+	);
+	user.authToken = authToken;
+	await user.save();
+	return authToken;
+};
+
+TourGuideSchema.methods.matchPassword = async function (enteredPassword) {
+	return await bcrypt.compare(enteredPassword, this.password);
+};
+
+module.exports = mongoose.model("TourGuide", TourGuideSchema);
