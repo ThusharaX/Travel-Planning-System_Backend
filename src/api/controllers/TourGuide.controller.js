@@ -6,7 +6,7 @@ export const loginTourGuide = async (request, response, next) => {
 	const { email, password } = request.body;
 
 	if (email && password) {
-		await TourGuideService.authenticationTourGuide(email, password)
+		await TourGuideService.authenticateTourGuide(email, password)
 			.then(async (tour_guide) => {
 				const authToken = await tour_guide.generateAuthToken();
 				const data = {

@@ -50,6 +50,21 @@ const TourGuideSchema = new mongoose.Schema(
 	}
 );
 
+TourGuideSchema.pre("save", async function (next) {
+	const user = this;
+	const password = user.password;
+
+	if (!user.isModified("password")) {
+		return next();
+	}
+
+	// Number of rounds hash function will execute
+	const salt = await bcrypt.genSalt(10);
+	const hash = await bcrypt.hashSync(password, salt);
+	user.password = hash;
+	return next();
+});
+
 TourGuideSchema.methods.generateAuthToken = async function () {
 	const user = this;
 	const secret = process.env.JWT_SECRET;
