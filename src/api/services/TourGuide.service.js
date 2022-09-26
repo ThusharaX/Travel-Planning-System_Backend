@@ -24,3 +24,14 @@ export const insertTourGuide = async (tour_guide) => {
 			throw new Error(error.message);
 		});
 };
+
+// Get all tour guide
+export const getAllTourGuides = async () => {
+	return await TourGuideModel.find({})
+		.then((tour_guide) => {
+			return tour_guide;
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};

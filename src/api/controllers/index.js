@@ -45,7 +45,7 @@ import {
 
 import { loginHotelOwner, registerHotelOwner } from "./HotelOwner.controller";
 
-import { loginTourGuide, registerTourGuide } from "./TourGuide.controller";
+import { loginTourGuide, registerTourGuide, getAllTourGuides } from "./TourGuide.controller";
 
 export default {
 	//Sample Controllers
@@ -95,4 +95,5 @@ export default {
 	// Tour Guide Controller
 	loginTourGuide,
 	registerTourGuide,
+	getAllTourGuides,
 };

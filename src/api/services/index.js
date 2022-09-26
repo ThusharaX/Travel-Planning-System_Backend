@@ -37,7 +37,7 @@ import {
 
 import { authenticateHotelOwner, insertHotelOwner } from "./HotelOwner.service";
 
-import { authenticateTourGuide, insertTourGuide } from "./TourGuide.service";
+import { authenticateTourGuide, insertTourGuide, getAllTourGuides } from "./TourGuide.service";
 
 export default {
 	// Sample services
@@ -87,4 +87,5 @@ export default {
 	// Tour Guide Servvices
 	authenticateTourGuide,
 	insertTourGuide,
+	getAllTourGuides,
 };

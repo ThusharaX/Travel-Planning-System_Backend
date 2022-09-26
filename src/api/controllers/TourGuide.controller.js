@@ -59,3 +59,17 @@ export const registerTourGuide = async (req, res, next) => {
 			next();
 		});
 };
+
+// Get all tour gudies
+
+export const getAllTourGuides = async (request, response, next) => {
+	await TourGuideService.getAllTourGuides("users")
+		.then(async (data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
