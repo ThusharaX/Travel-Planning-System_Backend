@@ -86,3 +86,16 @@ export const getOneTourGuide = async (request, response, next) => {
 			next();
 		});
 };
+
+// Update tour guide
+export const updateTourGuide = async (request, response, next) => {
+	await TourGuideService.updateTourGuide(request.params.id, request.body)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};

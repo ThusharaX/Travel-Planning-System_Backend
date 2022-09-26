@@ -50,3 +50,20 @@ export const getOneTourGuide = async (tour_guideId) => {
 			throw new Error(error.message);
 		});
 };
+
+// Update one tour guide
+export const updateTourGuide = async (tour_guideId, tour_guideData) => {
+	return await TourGuideModel.findById(tour_guideId, tour_guideData, {
+		new: true,
+	})
+		.then((tour_guide) => {
+			if (tour_guide) {
+				return tour_guide;
+			} else {
+				throw new Error("Tour Guide Not Found");
+			}
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};
