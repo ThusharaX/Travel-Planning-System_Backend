@@ -51,6 +51,7 @@ import {
 	getAllTourGuides,
 	getOneTourGuide,
 	updateTourGuide,
+	deleteTourGuide,
 } from "./TourGuide.controller";
 
 export default {
@@ -104,4 +105,5 @@ export default {
 	getAllTourGuides,
 	getOneTourGuide,
 	updateTourGuide,
+	deleteTourGuide,
 };

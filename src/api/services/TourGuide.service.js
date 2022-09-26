@@ -67,3 +67,18 @@ export const updateTourGuide = async (tour_guideId, tour_guideData) => {
 			throw new Error(error.message);
 		});
 };
+
+// Delete one tour guide
+export const deleteTourGuide = async (tour_guideId) => {
+	return await TourGuideModel.findByIdAndDelete(tour_guideId)
+		.then((tour_guide) => {
+			if (tour_guide) {
+				return tour_guide;
+			} else {
+				throw new Error("Tour Guide Not Found");
+			}
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};

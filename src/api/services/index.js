@@ -43,6 +43,7 @@ import {
 	getAllTourGuides,
 	getOneTourGuide,
 	updateTourGuide,
+	deleteTourGuide,
 } from "./TourGuide.service";
 
 export default {
@@ -96,4 +97,5 @@ export default {
 	getAllTourGuides,
 	getOneTourGuide,
 	updateTourGuide,
+	deleteTourGuide,
 };

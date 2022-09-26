@@ -60,5 +60,6 @@ router.post("/tour-guide/login", controller.loginTourGuide);
 router.get("/tour-guide/", controller.getAllTourGuides);
 router.get("/tour-guide/:id", controller.getOneTourGuide);
 router.put("/tour-guide/:id", controller.updateTourGuide);
+router.delete("/tour-guide/:id", controller.deleteTourGuide);
 
 export default router;

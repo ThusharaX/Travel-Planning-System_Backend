@@ -99,3 +99,17 @@ export const updateTourGuide = async (request, response, next) => {
 			next();
 		});
 };
+
+// Delete one toour guide
+
+export const deleteTourGuide = async (request, response, next) => {
+	await TourGuideService.deleteTourGuide(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
