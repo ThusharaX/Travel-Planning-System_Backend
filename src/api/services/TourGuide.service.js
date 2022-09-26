@@ -82,3 +82,19 @@ export const deleteTourGuide = async (tour_guideId) => {
 			throw new Error(error.message);
 		});
 };
+
+// Search Tour Guide name or contact number
+export const searchTourGuide = async (searchTerm) => {
+	return await TourGuideModel.find({
+		$or: [
+			{ tourGuideName: { $regex: searchTerm, $options: "i" } },
+			{ contactNumber: { $regex: searchTerm, $options: "i" } },
+		],
+	})
+		.then((tour_guide) => {
+			return tour_guide;
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};

@@ -113,3 +113,16 @@ export const deleteTourGuide = async (request, response, next) => {
 			next();
 		});
 };
+
+// Search Tour Guide
+export const searchTourGuide = async (request, response, next) => {
+	await TourGuideService.searchTourGuide(request.params.search)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};

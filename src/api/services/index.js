@@ -44,6 +44,7 @@ import {
 	getOneTourGuide,
 	updateTourGuide,
 	deleteTourGuide,
+	searchTourGuide,
 } from "./TourGuide.service";
 
 export default {
@@ -98,4 +99,5 @@ export default {
 	getOneTourGuide,
 	updateTourGuide,
 	deleteTourGuide,
+	searchTourGuide,
 };
