@@ -22,7 +22,7 @@ const VehicleSchema = new mongoose.Schema({
 		required: true,
 	},
 	vehicleImage: {
-		type: String,
+		type: Array,
 		required: false,
 	},
 });
