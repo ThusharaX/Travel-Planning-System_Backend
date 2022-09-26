@@ -58,5 +58,6 @@ router.post("/hotel-owner/register", controller.registerHotelOwner);
 router.post("/tour-guide/register", controller.registerTourGuide);
 router.post("/tour-guide/login", controller.loginTourGuide);
 router.get("/tour-guide/", controller.getAllTourGuides);
+router.get("/tour-guide/:id", controller.getOneTourGuide);
 
 export default router;

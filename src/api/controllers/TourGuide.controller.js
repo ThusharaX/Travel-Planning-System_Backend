@@ -73,3 +73,16 @@ export const getAllTourGuides = async (request, response, next) => {
 			next();
 		});
 };
+
+// Get one tour guide
+export const getOneTourGuide = async (request, response, next) => {
+	await TourGuideService.getOneTourGuide(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};

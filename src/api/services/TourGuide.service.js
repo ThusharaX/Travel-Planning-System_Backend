@@ -35,3 +35,18 @@ export const getAllTourGuides = async () => {
 			throw new Error(error.message);
 		});
 };
+
+// Get one tour guide
+export const getOneTourGuide = async (tour_guideId) => {
+	return await TourGuideModel.findById(tour_guideId)
+		.then((tour_guide) => {
+			if (tour_guide) {
+				return tour_guide;
+			} else {
+				throw new Error("Tour Guide not found");
+			}
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};
