@@ -55,7 +55,7 @@ export const updateTourPackage = async (request, response, next) => {
 		});
 };
 
-// Delete on tour pacakge
+// Delete one tour pacakge
 export const deleteTourPacakge = async (request, response, next) => {
 	await TourPackageService.deleteTourPacakge(request.params.id)
 		.then((data) => {

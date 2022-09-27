@@ -59,3 +59,70 @@ export const registerTourGuide = async (req, res, next) => {
 			next();
 		});
 };
+
+// Get all tour gudies
+
+export const getAllTourGuides = async (request, response, next) => {
+	await TourGuideService.getAllTourGuides("users")
+		.then(async (data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Get one tour guide
+export const getOneTourGuide = async (request, response, next) => {
+	await TourGuideService.getOneTourGuide(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Update tour guide
+export const updateTourGuide = async (request, response, next) => {
+	await TourGuideService.updateTourGuide(request.params.id, request.body)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Delete one toour guide
+
+export const deleteTourGuide = async (request, response, next) => {
+	await TourGuideService.deleteTourGuide(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Search Tour Guide
+export const searchTourGuide = async (request, response, next) => {
+	await TourGuideService.searchTourGuide(request.params.search)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
