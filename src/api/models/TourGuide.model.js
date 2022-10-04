@@ -21,11 +21,25 @@ const TourGuideSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
-
+		guideArea: {
+			type: String,
+			required: true,
+		},
+		guideCity: {
+			type: String,
+			required: true,
+		},
+		spokenLanguages: {
+			type: String,
+			required: true,
+		},
+		motherTongue: {
+			type: String,
+			required: true,
+		},
 		profilePicture: {
 			type: String,
 		},
-
 		password: {
 			type: String,
 			required: true,
