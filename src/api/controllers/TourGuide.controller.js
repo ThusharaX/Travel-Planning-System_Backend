@@ -11,6 +11,7 @@ export const loginTourGuide = async (request, response, next) => {
 				const authToken = await tour_guide.generateAuthToken();
 				const data = {
 					_id: tour_guide._id,
+					tourGuideName: tour_guide.tourGuideName,
 					email: tour_guide.email,
 					token: authToken,
 					permissionLevel: tour_guide.permissionLevel,
