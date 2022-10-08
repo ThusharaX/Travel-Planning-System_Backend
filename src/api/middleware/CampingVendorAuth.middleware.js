@@ -7,7 +7,7 @@ export const camping_vendor_auth = async (request, response, next) => {
 		const secret = process.env.JWT_SECRET;
 
 		if (secret) {
-			if (request.headers.authorization && request.headers.authorization.startWith("Bearer")) {
+			if (request.headers.authorization && request.headers.authorization.startsWith("Bearer")) {
 				const authToken = request.headers.authorization.split(" ")[1];
 				const decode = jwt.verify(authToken, secret);
 				const camping_vendor = await CampingVendorModel.findOne({
@@ -27,10 +27,12 @@ export const camping_vendor_auth = async (request, response, next) => {
 
 				logger.info(`Authentication Token for ID ${camping_vendor._id} is Accepted`);
 				next();
+			} else {
+				response.status(401);
+				throw new Error("Not authorized, no token");
 			}
 		} else {
-			response.status(401);
-			throw new Error("Not authorized, no token");
+			throw new Error("Token Secret is not found");
 		}
 	} catch (error) {
 		logger.warn(error.message);

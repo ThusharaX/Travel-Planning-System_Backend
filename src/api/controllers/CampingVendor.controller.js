@@ -25,12 +25,12 @@ export const loginCampingVendor = async (request, response, next) => {
 					message: error.message,
 				};
 				logger.error(JSON.stringify(errorResponseData));
-				request.handleResponse.errorResponsd(response)(errorResponseData);
+				request.handleResponse.errorRespond(response)(errorResponseData);
 				next();
 			});
 	} else {
 		logger.error("Username or Password is missing");
-		request.handleResponse.errorResponsd(response)("Username or Password is missing");
+		request.handleResponse.errorRespond(response)("Username or Password is missing");
 		next();
 	}
 };

@@ -1,7 +1,7 @@
 import CampingVendorModel from "../models/CampingVendor.model";
 
 export const authenticateCampingVendor = async (email, password) => {
-	return await CampingVendorModel.find({ email })
+	return await CampingVendorModel.findOne({ email })
 		.then(async (camping_vendor) => {
 			if (camping_vendor && (await camping_vendor.matchPassword(password))) {
 				return camping_vendor;
