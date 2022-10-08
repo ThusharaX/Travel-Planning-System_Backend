@@ -47,6 +47,8 @@ import {
 	searchTourGuide,
 } from "./TourGuide.service";
 
+import { authenticateCampingVendor, insertCampingVendor } from "./CampingVendor.service";
+
 export default {
 	// Sample services
 	insertSample,
@@ -100,4 +102,8 @@ export default {
 	updateTourGuide,
 	deleteTourGuide,
 	searchTourGuide,
+
+	// Camping Vendor Services
+	authenticateCampingVendor,
+	insertCampingVendor,
 };

@@ -63,4 +63,8 @@ router.put("/tour-guide/:id", controller.updateTourGuide);
 router.delete("/tour-guide/:id", controller.deleteTourGuide);
 router.get("/tour-guide/search/:search", controller.searchTourGuide);
 
+// Camping Vendor endpoints
+router.post("/camping-vendor/register/", controller.registerCampingVendor);
+router.post("/camping-vendor/login/", controller.loginCampingVendor);
+
 export default router;
