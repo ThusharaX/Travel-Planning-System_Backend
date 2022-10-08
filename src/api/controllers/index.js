@@ -55,6 +55,8 @@ import {
 	searchTourGuide,
 } from "./TourGuide.controller";
 
+import { loginCampingVendor, registerCampingVendor } from "./CampingVendor.controller";
+
 export default {
 	//Sample Controllers
 	insertSample,
@@ -108,4 +110,8 @@ export default {
 	updateTourGuide,
 	deleteTourGuide,
 	searchTourGuide,
+
+	// Camping Vendor Controller
+	loginCampingVendor,
+	registerCampingVendor,
 };
