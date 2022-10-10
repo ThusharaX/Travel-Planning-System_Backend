@@ -63,3 +63,68 @@ export const registerCampingVendor = async (req, res, next) => {
 			next();
 		});
 };
+
+// Get all CampingPackage
+export const getAllCampingVendors = async (request, response, next) => {
+	await CampingVendorService.getAllCampingVendors("users")
+		.then(async (data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Get one CampingPackage
+export const getOneCampingVendor = async (request, response, next) => {
+	await CampingVendorService.getOneCampingVendor(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Update one CampingPackage
+export const updateCampingVendor = async (request, response, next) => {
+	await CampingVendorService.updateCampingVendor(request.params.id, request.body)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Delete one CampingPackage
+export const deleteCampingVendor = async (request, response, next) => {
+	await CampingVendorService.deleteCampingVendor(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Search CampingPackage
+export const searchCampingVendors = async (request, response, next) => {
+	await CampingVendorService.searchCampingVendor(request.params.search)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
