@@ -1,6 +1,11 @@
 const mongoose = require("mongoose");
 
 const CampingPackageSchema = new mongoose.Schema({
+	vendorId: {
+		type: String,
+		required: true,
+	},
+
 	packageName: {
 		type: String,
 		required: true,

@@ -66,5 +66,10 @@ router.get("/tour-guide/search/:search", controller.searchTourGuide);
 // Camping Vendor endpoints
 router.post("/camping-vendor/register/", controller.registerCampingVendor);
 router.post("/camping-vendor/login/", controller.loginCampingVendor);
+router.get("/camping-vendor/", controller.getAllCampingVendors); // get all Camping packages
+router.get("/camping-vendor/:id", controller.getOneCampingVendor); // get one Campingl package
+router.put("/camping-vendor/:id", controller.updateCampingVendor); // update one Camping package
+router.delete("/camping-vendor/:id", controller.deleteCampingVendor); // delete one Camping package
+router.get("/camping-vendor/search/:search", controller.searchCampingVendors); // search Camping packages
 
 export default router;
