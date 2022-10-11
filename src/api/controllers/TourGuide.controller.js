@@ -1,22 +1,6 @@
 import TourGuideService from "../services";
 import logger from "../../util/logger";
 import TourGuideModel from "../models/TourGuide.model";
-const joi = require("joi");
-
-const registerValidation = (data) => {
-	const schema = joi.object({
-		tourGuideName: joi.string().required().min(5).max(100),
-		email: joi.string().required().max(50).email(),
-		nic: joi.string().required().min(10).max(12),
-		contactNumber: joi.string().required().min(10).max(10),
-		guideArea: joi.string().required().min(3).max(100),
-		guideCity: joi.string().required().min(3).max(100),
-		spokenLanguages: joi.string().required().min(3).max(100),
-		motherTongue: joi.string().required().min(3).max(100),
-		password: joi.string().required().min(4).max(50),
-	});
-	return schema.validate(data);
-};
 
 // Tour Guide Login
 export const loginTourGuide = async (request, response, next) => {
@@ -55,13 +39,9 @@ export const loginTourGuide = async (request, response, next) => {
 
 // Tour Guide Register
 export const registerTourGuide = async (request, response, next) => {
-	const { error } = registerValidation(request.body);
-	if (error) {
-		logger.error(error.message);
-		request.handleResponse.errorRespond(response)(error.message);
-		next();
-	} else if (await TourGuideModel.findOne({ email: request.body.email })) {
+	if (await TourGuideModel.findOne({ email: request.body.email })) {
 		request.handleResponse.errorRespond(response)("Email already exists");
+		next();
 	} else if (await TourGuideModel.findOne({ nic: request.body.nic })) {
 		request.handleResponse.errorRespond(response)("NIC already Exists");
 		next();
