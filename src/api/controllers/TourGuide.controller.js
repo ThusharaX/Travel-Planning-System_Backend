@@ -1,5 +1,22 @@
 import TourGuideService from "../services";
 import logger from "../../util/logger";
+import TourGuideModel from "../models/TourGuide.model";
+const joi = require("joi");
+
+const registerValidation = (data) => {
+	const schema = joi.object({
+		tourGuideName: joi.string().required().min(5).max(100),
+		email: joi.string().required().max(50).email(),
+		nic: joi.string().required().min(10).max(12),
+		contactNumber: joi.string().required().min(10).max(10),
+		guideArea: joi.string().required().min(3).max(100),
+		guideCity: joi.string().required().min(3).max(100),
+		spokenLanguages: joi.string().required().min(3).max(100),
+		motherTongue: joi.string().required().min(3).max(100),
+		password: joi.string().required().min(4).max(50),
+	});
+	return schema.validate(data);
+};
 
 // Tour Guide Login
 export const loginTourGuide = async (request, response, next) => {
@@ -37,32 +54,44 @@ export const loginTourGuide = async (request, response, next) => {
 };
 
 // Tour Guide Register
-export const registerTourGuide = async (req, res, next) => {
-	const user = {
-		tourGuideName: req.body.tourGuideName,
-		email: req.body.email,
-		nic: req.body.nic,
-		contactNumber: req.body.contactNumber,
-		guideArea: req.body.guideArea,
-		guideCity: req.body.guideCity,
-		spokenLanguages: req.body.spokenLanguages,
-		motherTongue: req.body.motherTongue,
-		profilePicture: "https://www.seekpng.com/png/full/514-5147412_default-avatar-icon.png",
-		password: req.body.password,
-		permissionLevel: "TOUR_GUIDE",
-	};
+export const registerTourGuide = async (request, response, next) => {
+	const { error } = registerValidation(request.body);
+	if (error) {
+		logger.error(error.message);
+		request.handleResponse.errorRespond(response)(error.message);
+		next();
+	} else if (await TourGuideModel.findOne({ email: request.body.email })) {
+		request.handleResponse.errorRespond(response)("Email already exists");
+	} else if (await TourGuideModel.findOne({ nic: request.body.nic })) {
+		request.handleResponse.errorRespond(response)("NIC already Exists");
+		next();
+	} else {
+		const TourGuide = {
+			tourGuideName: request.body.tourGuideName,
+			email: request.body.email,
+			nic: request.body.nic,
+			contactNumber: request.body.contactNumber,
+			guideArea: request.body.guideArea,
+			guideCity: request.body.guideCity,
+			spokenLanguages: request.body.spokenLanguages,
+			motherTongue: request.body.motherTongue,
+			profilePicture: "https://www.seekpng.com/png/full/514-5147412_default-avatar-icon.png",
+			password: request.body.password,
+			permissionLevel: "TOUR_GUIDE",
+		};
 
-	await TourGuideService.insertTourGuide(user)
-		.then((data) => {
-			logger.info(`New User with ID ${data._id} created`);
-			req.handleResponse.successRespond(res)(data);
-			next();
-		})
-		.catch((error) => {
-			logger.error(error.message);
-			req.handleResponse.errorRespond(res)(error.message);
-			next();
-		});
+		await TourGuideService.insertTourGuide(TourGuide)
+			.then((data) => {
+				logger.info(`New User with ID ${data._id} created`);
+				request.handleResponse.successRespond(response)(data);
+				next();
+			})
+			.catch((error) => {
+				logger.error(error.message);
+				request.handleResponse.errorRespond(response)(error.message);
+				next();
+			});
+	}
 };
 
 // Get all tour gudies
