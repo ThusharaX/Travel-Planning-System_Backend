@@ -40,7 +40,7 @@ export const getOneTourPackage = async (tour_packageId) => {
 
 // update one tour package
 export const updateTourPackage = async (tour_packageId, tour_packageData) => {
-	return await TourPackageModel.findById(tour_packageId, tour_packageData, {
+	return await TourPackageModel.findByIdAndUpdate(tour_packageId, tour_packageData, {
 		new: true,
 	})
 		.then((tour_package) => {
