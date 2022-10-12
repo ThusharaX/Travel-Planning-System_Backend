@@ -63,3 +63,16 @@ export const registerHotelOwner = async (req, res, next) => {
 			next();
 		});
 };
+
+// Get Hotel Owner Details
+export const getHotelOwnerDetails = async (req, res, next) => {
+	await HotelOwnerService.getHotelOwnerDetails(req.params.id)
+		.then((data) => {
+			req.handleResponse.successRespond(res)(data);
+			next();
+		})
+		.catch((error) => {
+			req.handleResponse.errorRespond(res)(error.message);
+			next();
+		});
+};

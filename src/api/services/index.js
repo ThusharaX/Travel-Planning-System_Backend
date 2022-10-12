@@ -36,7 +36,7 @@ import {
 	uploadImage,
 } from "./TourPackage.service";
 
-import { authenticateHotelOwner, insertHotelOwner } from "./HotelOwner.service";
+import { getHotelOwnerDetails, authenticateHotelOwner, insertHotelOwner } from "./HotelOwner.service";
 
 import {
 	authenticateTourGuide,
@@ -101,6 +101,7 @@ export default {
 	uploadImage,
 
 	// Hotel Owner Service
+	getHotelOwnerDetails,
 	authenticateHotelOwner,
 	insertHotelOwner,
 

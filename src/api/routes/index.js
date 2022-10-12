@@ -51,6 +51,7 @@ router.delete("/tour-package/:id", controller.deleteTourPacakge);
 router.get("/tour-package/search/:search", controller.searchTourPacakges);
 
 // Hotel Owner endpoints
+router.get("/hotel-owner/:id", controller.getHotelOwnerDetails);
 router.post("/hotel-owner/login", controller.loginHotelOwner);
 router.post("/hotel-owner/register", controller.registerHotelOwner);
 
