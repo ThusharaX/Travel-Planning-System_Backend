@@ -35,7 +35,7 @@ import {
 	searchTourPacakges,
 } from "./TourPackage.service";
 
-import { authenticateHotelOwner, insertHotelOwner } from "./HotelOwner.service";
+import { getHotelOwnerDetails, authenticateHotelOwner, insertHotelOwner } from "./HotelOwner.service";
 
 import {
 	authenticateTourGuide,
@@ -99,6 +99,7 @@ export default {
 	searchTourPacakges,
 
 	// Hotel Owner Service
+	getHotelOwnerDetails,
 	authenticateHotelOwner,
 	insertHotelOwner,
 

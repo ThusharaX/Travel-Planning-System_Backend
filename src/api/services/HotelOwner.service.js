@@ -24,3 +24,14 @@ export const insertHotelOwner = async (hotel_owner) => {
 			throw new Error(error.message);
 		});
 };
+
+// Get Hotel Owner Details
+export const getHotelOwnerDetails = async (userId) => {
+	return await HotelOwnerModel.findById(userId)
+		.then((hotelOwner) => {
+			return hotelOwner;
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};

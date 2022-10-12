@@ -43,7 +43,7 @@ import {
 	searchTourPacakges,
 } from "./TourPackage.controller";
 
-import { loginHotelOwner, registerHotelOwner } from "./HotelOwner.controller";
+import { getHotelOwnerDetails, loginHotelOwner, registerHotelOwner } from "./HotelOwner.controller";
 
 import {
 	loginTourGuide,
@@ -107,6 +107,7 @@ export default {
 	searchTourPacakges,
 
 	// Hotel Owner Controller
+	getHotelOwnerDetails,
 	loginHotelOwner,
 	registerHotelOwner,
 
