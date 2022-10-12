@@ -33,6 +33,7 @@ import {
 	updateTourPackage,
 	deleteTourPacakge,
 	searchTourPacakges,
+	uploadImage,
 } from "./TourPackage.service";
 
 import { authenticateHotelOwner, insertHotelOwner } from "./HotelOwner.service";
@@ -47,7 +48,15 @@ import {
 	searchTourGuide,
 } from "./TourGuide.service";
 
-import { authenticateCampingVendor, insertCampingVendor } from "./CampingVendor.service";
+import {
+	authenticateCampingVendor,
+	insertCampingVendor,
+	getAllCampingVendors,
+	getOneCampingVendor,
+	updateCampingVendor,
+	deleteCampingVendor,
+	searchCampingVendor,
+} from "./CampingVendor.service";
 
 import { authenticateVehicleOwner, insertVehicleOwner } from "./VehicleOwner.Service";
 
@@ -91,6 +100,7 @@ export default {
 	updateTourPackage,
 	deleteTourPacakge,
 	searchTourPacakges,
+	uploadImage,
 
 	// Hotel Owner Service
 	authenticateHotelOwner,
@@ -112,4 +122,9 @@ export default {
 	// Vehicle Owner Services
 	authenticateVehicleOwner,
 	insertVehicleOwner,
+	getAllCampingVendors,
+	getOneCampingVendor,
+	updateCampingVendor,
+	deleteCampingVendor,
+	searchCampingVendor,
 };

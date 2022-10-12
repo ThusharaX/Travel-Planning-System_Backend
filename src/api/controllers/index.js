@@ -55,7 +55,15 @@ import {
 	searchTourGuide,
 } from "./TourGuide.controller";
 
-import { loginCampingVendor, registerCampingVendor } from "./CampingVendor.controller";
+import {
+	loginCampingVendor,
+	registerCampingVendor,
+	getAllCampingVendors,
+	getOneCampingVendor,
+	updateCampingVendor,
+	deleteCampingVendor,
+	searchCampingVendors,
+} from "./CampingVendor.controller";
 
 import { loginVehicleOwner, registerVehicleOwner } from "./VehicleOwner.controller";
 export default {
@@ -119,4 +127,9 @@ export default {
 	// Vehicle Owner Controller
 	registerVehicleOwner,
 	loginVehicleOwner,
+	getAllCampingVendors,
+	getOneCampingVendor,
+	updateCampingVendor,
+	deleteCampingVendor,
+	searchCampingVendors,
 };

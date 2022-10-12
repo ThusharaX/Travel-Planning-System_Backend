@@ -42,8 +42,7 @@ const TourPackageSchema = new mongoose.Schema({
 	},
 
 	images: {
-		type: Array,
-		required: true,
+		type: String,
 	},
 });
 
