@@ -58,6 +58,8 @@ import {
 	searchCampingVendor,
 } from "./CampingVendor.service";
 
+import { authenticateVehicleOwner, insertVehicleOwner } from "./VehicleOwner.Service";
+
 export default {
 	// Sample services
 	insertSample,
@@ -117,6 +119,10 @@ export default {
 	// Camping Vendor Services
 	authenticateCampingVendor,
 	insertCampingVendor,
+
+	// Vehicle Owner Services
+	authenticateVehicleOwner,
+	insertVehicleOwner,
 	getAllCampingVendors,
 	getOneCampingVendor,
 	updateCampingVendor,

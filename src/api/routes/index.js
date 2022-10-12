@@ -73,4 +73,8 @@ router.put("/camping-vendor/:id", controller.updateCampingVendor); // update one
 router.delete("/camping-vendor/:id", controller.deleteCampingVendor); // delete one Camping package
 router.get("/camping-vendor/search/:search", controller.searchCampingVendors); // search Camping packages
 
+// Vehicle Owner Endpoints
+router.post("/vehicle-owner/register/", controller.registerVehicleOwner);
+router.post("/vehicle-owner/login/", controller.loginVehicleOwner);
+
 export default router;
