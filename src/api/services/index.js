@@ -33,6 +33,7 @@ import {
 	updateTourPackage,
 	deleteTourPacakge,
 	searchTourPacakges,
+	uploadImage,
 } from "./TourPackage.service";
 
 import { getHotelOwnerDetails, authenticateHotelOwner, insertHotelOwner } from "./HotelOwner.service";
@@ -97,6 +98,7 @@ export default {
 	updateTourPackage,
 	deleteTourPacakge,
 	searchTourPacakges,
+	uploadImage,
 
 	// Hotel Owner Service
 	getHotelOwnerDetails,
