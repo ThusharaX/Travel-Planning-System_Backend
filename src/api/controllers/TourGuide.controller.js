@@ -14,6 +14,7 @@ export const loginTourGuide = async (request, response, next) => {
 					_id: tour_guide._id,
 					tourGuideName: tour_guide.tourGuideName,
 					email: tour_guide.email,
+					contactNumber: tour_guide.contactNumber,
 					token: authToken,
 					permissionLevel: tour_guide.permissionLevel,
 				};
