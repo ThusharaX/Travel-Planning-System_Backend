@@ -64,6 +64,7 @@ import {
 	getOneVehicleOwner,
 	updateVehicleOwner,
 	deleteVehicleOwner,
+	searchVehicleOwner,
 } from "./VehicleOwner.Service";
 
 export default {
@@ -137,4 +138,5 @@ export default {
 	getOneVehicleOwner,
 	updateVehicleOwner,
 	deleteVehicleOwner,
+	searchVehicleOwner,
 };

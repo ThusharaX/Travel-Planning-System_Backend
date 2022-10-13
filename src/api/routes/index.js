@@ -80,4 +80,6 @@ router.get("/vehicle-owner/", controller.getAllVehicleOwners);
 router.get("/vehicle-owner/:id", controller.getOneVehicleOwner);
 router.put("/vehicle-owner/:id", controller.updateVehicleOwner);
 router.delete("/vehicle-owner/:id", controller.deleteVehicleOwner);
+router.get("/vehicle-owner/search/:search", controller.searchVehicleOwner);
+
 export default router;

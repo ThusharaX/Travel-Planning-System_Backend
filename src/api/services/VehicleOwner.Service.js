@@ -83,3 +83,19 @@ export const deleteVehicleOwner = async (vehicle_ownerId) => {
 			throw new Error(error.nessage);
 		});
 };
+
+// Search company name or contact number
+export const searchVehicleOwner = async (searchTerm) => {
+	return await VehicleOwnerModel.find({
+		$or: [
+			{ companyOwnerName: { $regex: searchTerm, $options: "i" } },
+			{ companyName: { $regex: searchTerm, $options: "i" } },
+		],
+	})
+		.then((vehicle_owner) => {
+			return vehicle_owner;
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};

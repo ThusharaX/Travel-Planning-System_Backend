@@ -124,3 +124,16 @@ export const deleteVehicleOwner = async (request, response, next) => {
 			next();
 		});
 };
+
+// Search Vehicle Owner
+export const searchVehicleOwner = async (request, response, next) => {
+	await VehicleOwnerService.searchVehicleOwner(request.params.search)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};

@@ -72,6 +72,7 @@ import {
 	getOneVehicleOwner,
 	updateVehicleOwner,
 	deleteVehicleOwner,
+	searchVehicleOwner,
 } from "./VehicleOwner.controller";
 export default {
 	//Sample Controllers
@@ -144,4 +145,5 @@ export default {
 	getOneVehicleOwner,
 	updateVehicleOwner,
 	deleteVehicleOwner,
+	searchVehicleOwner,
 };
