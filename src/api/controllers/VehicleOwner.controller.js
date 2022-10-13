@@ -73,3 +73,16 @@ export const registerVehicleOwner = async (request, response, next) => {
 			});
 	}
 };
+
+// Get all Vehicle Owners
+export const getAllVehicleOwners = async (request, response, next) => {
+	await VehicleOwnerService.getAllVehicleOwners("users")
+		.then(async (data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};

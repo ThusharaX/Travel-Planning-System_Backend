@@ -24,3 +24,14 @@ export const insertVehicleOwner = async (vehicle_owner) => {
 			throw new Error(error.message);
 		});
 };
+
+// Get all Vehicle Owners
+export const getAllVehicleOwners = async () => {
+	return await VehicleOwnerModel.find({})
+		.then((vehicle_owner) => {
+			return vehicle_owner;
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};

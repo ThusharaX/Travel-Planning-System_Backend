@@ -76,5 +76,5 @@ router.get("/camping-vendor/search/:search", controller.searchCampingVendors); /
 // Vehicle Owner Endpoints
 router.post("/vehicle-owner/register/", controller.registerVehicleOwner);
 router.post("/vehicle-owner/login/", controller.loginVehicleOwner);
-
+router.get("/vehicle-owner/", controller.getAllVehicleOwners);
 export default router;
