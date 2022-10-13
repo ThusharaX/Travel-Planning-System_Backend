@@ -25,7 +25,7 @@ export const getAllTourPackages = async () => {
 
 // Get one tour pacakge
 export const getOneTourPackage = async (tour_packageId) => {
-	return await TourPackageModel.findById(tour_packageId)
+	return await TourPackageModel.findByIdAndUpdate(tour_packageId)
 		.then((tour_package) => {
 			if (tour_package) {
 				return tour_package;
