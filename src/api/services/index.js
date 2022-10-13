@@ -33,7 +33,6 @@ import {
 	updateTourPackage,
 	deleteTourPacakge,
 	searchTourPacakges,
-	uploadImage,
 } from "./TourPackage.service";
 
 import { getHotelOwnerDetails, authenticateHotelOwner, insertHotelOwner } from "./HotelOwner.service";
@@ -57,6 +56,8 @@ import {
 	deleteCampingVendor,
 	searchCampingVendor,
 } from "./CampingVendor.service";
+
+import { authenticateVehicleOwner, insertVehicleOwner } from "./VehicleOwner.Service";
 
 export default {
 	// Sample services
@@ -98,7 +99,6 @@ export default {
 	updateTourPackage,
 	deleteTourPacakge,
 	searchTourPacakges,
-	uploadImage,
 
 	// Hotel Owner Service
 	getHotelOwnerDetails,
@@ -117,6 +117,10 @@ export default {
 	// Camping Vendor Services
 	authenticateCampingVendor,
 	insertCampingVendor,
+
+	// Vehicle Owner Services
+	authenticateVehicleOwner,
+	insertVehicleOwner,
 	getAllCampingVendors,
 	getOneCampingVendor,
 	updateCampingVendor,

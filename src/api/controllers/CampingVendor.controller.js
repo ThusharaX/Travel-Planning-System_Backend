@@ -1,4 +1,5 @@
 import CampingVendorService from "../services";
+import CampingVendorModel from "../models/CampingVendor.model";
 import logger from "../../util/logger";
 
 // Camping Vendor Login
@@ -36,32 +37,40 @@ export const loginCampingVendor = async (request, response, next) => {
 };
 
 // Camping Vendor Register
-export const registerCampingVendor = async (req, res, next) => {
-	const user = {
-		companyOwnerName: req.body.companyOwnerName,
-		email: req.body.email,
-		nic: req.body.nic,
-		contactNumber: req.body.contactNumber,
-		companyName: req.body.companyName,
-		companyAddress: req.body.companyAddress,
-		companyPhone: req.body.companyPhone,
-		companyRegisterNumber: req.body.companyRegisterNumber,
-		profilePicture: "https://www.seekpng.com/png/full/514-5147412_default-avatar-icon.png",
-		password: req.body.password,
-		permissionLevel: "CAMPING_VENDOR",
-	};
+export const registerCampingVendor = async (request, response, next) => {
+	if (await CampingVendorModel.findOne({ email: request.body.email })) {
+		request.handleResponse.errorRespond(response)("Email already Exists");
+		next();
+	} else if (await CampingVendorModel.findOne({ nic: request.body.nic })) {
+		request.handleResponse.errorRespond(response)("NIC already Exists");
+		next();
+	} else {
+		const CampingVendor = {
+			companyOwnerName: request.body.companyOwnerName,
+			email: request.body.email,
+			nic: request.body.nic,
+			contactNumber: request.body.contactNumber,
+			companyName: request.body.companyName,
+			companyAddress: request.body.companyAddress,
+			companyPhone: request.body.companyPhone,
+			companyRegisterNumber: request.body.companyRegisterNumber,
+			profilePicture: "https://www.seekpng.com/png/full/514-5147412_default-avatar-icon.png",
+			password: request.body.password,
+			permissionLevel: "CAMPING_VENDOR",
+		};
 
-	await CampingVendorService.insertCampingVendor(user)
-		.then((data) => {
-			logger.info(`New User with ID ${data._id} created`);
-			req.handleResponse.successRespond(res)(data);
-			next();
-		})
-		.catch((error) => {
-			logger.error(error.message);
-			req.handleResponse.errorRespond(res)(error.message);
-			next();
-		});
+		await CampingVendorService.insertCampingVendor(CampingVendor)
+			.then((data) => {
+				logger.info(`New User with ID ${data._id} created`);
+				request.handleResponse.successRespond(response)(data);
+				next();
+			})
+			.catch((error) => {
+				logger.error(error.message);
+				request.handleResponse.errorRespond(response)(error.message);
+				next();
+			});
+	}
 };
 
 // Get all CampingPackage
