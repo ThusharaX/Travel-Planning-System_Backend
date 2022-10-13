@@ -35,3 +35,51 @@ export const getAllVehicleOwners = async () => {
 			throw new Error(error.message);
 		});
 };
+
+// Get One Vehicle Owners
+export const getOneVehicleOwner = async (vehicle_ownerId) => {
+	return await VehicleOwnerModel.findById(vehicle_ownerId)
+		.then((vehicle_owner) => {
+			if (vehicle_owner) {
+				return vehicle_owner;
+			} else {
+				throw new Error("Vehicle Owner not found");
+			}
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};
+
+// Update one vehicle owner
+export const updateVehicleOwner = async (vehicle_ownerId, vehicle_ownerData) => {
+	return await VehicleOwnerModel.findByIdAndUpdate(vehicle_ownerId, vehicle_ownerData, {
+		new: true,
+	})
+		.then((vehicle_owner) => {
+			if (vehicle_owner) {
+				return vehicle_owner;
+			} else {
+				throw new Error("Vehicle Owner not found");
+			}
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};
+
+// Delete Vehicle Owner
+
+export const deleteVehicleOwner = async (vehicle_ownerId) => {
+	return await VehicleOwnerModel.findByIdAndDelete(vehicle_ownerId)
+		.then((vehicle_owner) => {
+			if (vehicle_owner) {
+				return vehicle_owner;
+			} else {
+				throw new Error("Vehicle Owner not found");
+			}
+		})
+		.catch((error) => {
+			throw new Error(error.nessage);
+		});
+};

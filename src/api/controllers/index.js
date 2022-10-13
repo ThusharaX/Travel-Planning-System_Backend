@@ -65,7 +65,14 @@ import {
 	searchCampingVendors,
 } from "./CampingVendor.controller";
 
-import { loginVehicleOwner, registerVehicleOwner, getAllVehicleOwners } from "./VehicleOwner.controller";
+import {
+	loginVehicleOwner,
+	registerVehicleOwner,
+	getAllVehicleOwners,
+	getOneVehicleOwner,
+	updateVehicleOwner,
+	deleteVehicleOwner,
+} from "./VehicleOwner.controller";
 export default {
 	//Sample Controllers
 	insertSample,
@@ -134,4 +141,7 @@ export default {
 	registerVehicleOwner,
 	loginVehicleOwner,
 	getAllVehicleOwners,
+	getOneVehicleOwner,
+	updateVehicleOwner,
+	deleteVehicleOwner,
 };

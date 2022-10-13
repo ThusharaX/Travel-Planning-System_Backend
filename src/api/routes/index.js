@@ -77,4 +77,7 @@ router.get("/camping-vendor/search/:search", controller.searchCampingVendors); /
 router.post("/vehicle-owner/register/", controller.registerVehicleOwner);
 router.post("/vehicle-owner/login/", controller.loginVehicleOwner);
 router.get("/vehicle-owner/", controller.getAllVehicleOwners);
+router.get("/vehicle-owner/:id", controller.getOneVehicleOwner);
+router.put("/vehicle-owner/:id", controller.updateVehicleOwner);
+router.delete("/vehicle-owner/:id", controller.deleteVehicleOwner);
 export default router;
