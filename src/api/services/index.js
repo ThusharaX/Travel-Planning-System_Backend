@@ -57,7 +57,15 @@ import {
 	searchCampingVendor,
 } from "./CampingVendor.service";
 
-import { authenticateVehicleOwner, insertVehicleOwner } from "./VehicleOwner.Service";
+import {
+	authenticateVehicleOwner,
+	insertVehicleOwner,
+	getAllVehicleOwners,
+	getOneVehicleOwner,
+	updateVehicleOwner,
+	deleteVehicleOwner,
+	searchVehicleOwner,
+} from "./VehicleOwner.Service";
 
 export default {
 	// Sample services
@@ -117,13 +125,18 @@ export default {
 	// Camping Vendor Services
 	authenticateCampingVendor,
 	insertCampingVendor,
-
-	// Vehicle Owner Services
-	authenticateVehicleOwner,
-	insertVehicleOwner,
 	getAllCampingVendors,
 	getOneCampingVendor,
 	updateCampingVendor,
 	deleteCampingVendor,
 	searchCampingVendor,
+
+	// Vehicle Owner Services
+	authenticateVehicleOwner,
+	insertVehicleOwner,
+	getAllVehicleOwners,
+	getOneVehicleOwner,
+	updateVehicleOwner,
+	deleteVehicleOwner,
+	searchVehicleOwner,
 };
