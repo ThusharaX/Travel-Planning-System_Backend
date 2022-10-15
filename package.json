@@ -7,10 +7,10 @@
 		"start": "cross-env NODE_ENV=Development nodemon --exec babel-node src/server.js",
 		"test": "jest --forceExit",
 		"test:watch": "jest --watchAll --runInBand --detectOpenHandles --forceExit",
-		"check-lint": "eslint src",
-		"check-format": "prettier --check .",
-		"fix-lint": "eslint src --fix",
-		"fix-format": "prettier --write .",
+		"check:lint": "eslint src",
+		"check:format": "prettier --check .",
+		"lint:fix": "eslint src --fix",
+		"format:fix": "prettier --write .",
 		"prepare": "husky install"
 	},
 	"keywords": [
