@@ -74,6 +74,8 @@ import {
 	deleteVehicleOwner,
 	searchVehicleOwner,
 } from "./VehicleOwner.controller";
+
+import { loginCustomer, registerCustomer } from "./Customer.controller";
 export default {
 	//Sample Controllers
 	insertSample,
@@ -146,4 +148,8 @@ export default {
 	updateVehicleOwner,
 	deleteVehicleOwner,
 	searchVehicleOwner,
+
+	// Customer Controller
+	loginCustomer,
+	registerCustomer,
 };

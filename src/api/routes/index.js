@@ -82,4 +82,8 @@ router.put("/vehicle-owner/:id", controller.updateVehicleOwner);
 router.delete("/vehicle-owner/:id", controller.deleteVehicleOwner);
 router.get("/vehicle-owner/search/:search", controller.searchVehicleOwner);
 
+// Customer Endpoints
+router.post("/customer/register/", controller.registerCustomer);
+router.post("/customer/login/", controller.loginCustomer);
+
 export default router;
