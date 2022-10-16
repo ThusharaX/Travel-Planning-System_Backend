@@ -76,3 +76,27 @@ export const getHotelOwnerDetails = async (req, res, next) => {
 			next();
 		});
 };
+
+// Edit Hotel Owner Details
+export const editHotelOwnerDetails = async (req, res, next) => {
+	const user = {
+		ownerName: req.body.ownerName,
+		email: req.body.email,
+		nic: req.body.nic,
+		contactNumber: req.body.contactNumber,
+		hotelName: req.body.hotelName,
+		hotelAddress: req.body.hotelAddress,
+		companyPhoneNumber: req.body.companyPhoneNumber,
+		companyRegNo: req.body.companyRegNo,
+	};
+
+	await HotelOwnerService.editHotelOwnerDetails(req.params.id, user)
+		.then((data) => {
+			req.handleResponse.successRespond(res)(data);
+			next();
+		})
+		.catch((error) => {
+			req.handleResponse.errorRespond(res)(error.message);
+			next();
+		});
+};
