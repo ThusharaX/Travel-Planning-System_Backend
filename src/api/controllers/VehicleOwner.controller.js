@@ -73,3 +73,67 @@ export const registerVehicleOwner = async (request, response, next) => {
 			});
 	}
 };
+
+// Get all Vehicle Owners
+export const getAllVehicleOwners = async (request, response, next) => {
+	await VehicleOwnerService.getAllVehicleOwners("users")
+		.then(async (data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Get One vehicle Owner
+export const getOneVehicleOwner = async (request, response, next) => {
+	await VehicleOwnerService.getOneVehicleOwner(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Update Vehicle Owner
+export const updateVehicleOwner = async (request, response, next) => {
+	await VehicleOwnerService.updateVehicleOwner(request.params.id, request.body)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+//  Delete vehicle owner
+export const deleteVehicleOwner = async (request, response, next) => {
+	await VehicleOwnerService.deleteVehicleOwner(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Search Vehicle Owner
+export const searchVehicleOwner = async (request, response, next) => {
+	await VehicleOwnerService.searchVehicleOwner(request.params.search)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
