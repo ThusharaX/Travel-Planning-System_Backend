@@ -68,3 +68,68 @@ export const registerCustomer = async (request, response, next) => {
 			});
 	}
 };
+
+// Get All Customers
+export const getAllCustomers = async (request, response, next) => {
+	await CustomerService.getAllCustomers("users")
+		.then(async (data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Get one customer
+export const getOneCustomer = async (request, response, next) => {
+	await CustomerService.getOneCustomer(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Update Customer
+export const updateCustomer = async (request, response, next) => {
+	await CustomerService.updateCustomer(request.params.id, request.body)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Delete one customer
+export const deleteCustomer = async (request, response, next) => {
+	await CustomerService.deleteCustomer(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};
+
+// Search Customer
+export const searchCustomer = async (request, response, next) => {
+	await CustomerService.searchCustomer(request.params.search)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};

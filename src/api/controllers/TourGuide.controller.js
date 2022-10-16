@@ -115,7 +115,7 @@ export const updateTourGuide = async (request, response, next) => {
 		});
 };
 
-// Delete one toour guide
+// Delete one tour guide
 
 export const deleteTourGuide = async (request, response, next) => {
 	await TourGuideService.deleteTourGuide(request.params.id)
