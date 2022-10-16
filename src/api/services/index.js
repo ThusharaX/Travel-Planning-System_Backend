@@ -67,7 +67,15 @@ import {
 	searchVehicleOwner,
 } from "./VehicleOwner.Service";
 
-import { authenticateCustomer, insertCustomer } from "./Customer.Service";
+import {
+	authenticateCustomer,
+	insertCustomer,
+	getAllCustomers,
+	getOneCustomer,
+	updateCustomer,
+	deleteCustomer,
+	searchCustomer,
+} from "./Customer.Service";
 
 export default {
 	// Sample services
@@ -145,4 +153,9 @@ export default {
 	// Customer
 	authenticateCustomer,
 	insertCustomer,
+	getAllCustomers,
+	getOneCustomer,
+	updateCustomer,
+	deleteCustomer,
+	searchCustomer,
 };

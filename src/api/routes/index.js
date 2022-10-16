@@ -56,13 +56,13 @@ router.post("/hotel-owner/login", controller.loginHotelOwner);
 router.post("/hotel-owner/register", controller.registerHotelOwner);
 
 // Tour Guide endpoints
-router.post("/tour-guide/register/", controller.registerTourGuide);
-router.post("/tour-guide/login/", controller.loginTourGuide);
-router.get("/tour-guide/", controller.getAllTourGuides);
-router.get("/tour-guide/:id", controller.getOneTourGuide);
-router.put("/tour-guide/:id", controller.updateTourGuide);
-router.delete("/tour-guide/:id", controller.deleteTourGuide);
-router.get("/tour-guide/search/:search", controller.searchTourGuide);
+router.post("/tour-guide/register/", controller.registerTourGuide); // Register Tour Guide
+router.post("/tour-guide/login/", controller.loginTourGuide); // Login Tour Guide
+router.get("/tour-guide/", controller.getAllTourGuides); // Get all tour guide
+router.get("/tour-guide/:id", controller.getOneTourGuide); // get one tour guide
+router.put("/tour-guide/:id", controller.updateTourGuide); // edit tour guide
+router.delete("/tour-guide/:id", controller.deleteTourGuide); // delete tour guide
+router.get("/tour-guide/search/:search", controller.searchTourGuide); // search tour guide
 
 // Camping Vendor endpoints
 router.post("/camping-vendor/register/", controller.registerCampingVendor);
@@ -84,6 +84,10 @@ router.get("/vehicle-owner/search/:search", controller.searchVehicleOwner);
 
 // Customer Endpoints
 router.post("/customer/register/", controller.registerCustomer);
-router.post("/customer/login/", controller.loginCustomer);
+router.get("/customer/", controller.getAllCustomers);
+router.get("/customer/:id", controller.getOneCustomer);
+router.put("/customer/:id", controller.updateCustomer);
+router.delete("/customer/:id", controller.deleteCustomer);
+router.get("/customer/search/:search", controller.searchCustomer);
 
 export default router;

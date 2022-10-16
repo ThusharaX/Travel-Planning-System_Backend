@@ -75,7 +75,15 @@ import {
 	searchVehicleOwner,
 } from "./VehicleOwner.controller";
 
-import { loginCustomer, registerCustomer } from "./Customer.controller";
+import {
+	loginCustomer,
+	registerCustomer,
+	getAllCustomers,
+	getOneCustomer,
+	updateCustomer,
+	deleteCustomer,
+	searchCustomer,
+} from "./Customer.controller";
 export default {
 	//Sample Controllers
 	insertSample,
@@ -152,4 +160,9 @@ export default {
 	// Customer Controller
 	loginCustomer,
 	registerCustomer,
+	getAllCustomers,
+	getOneCustomer,
+	updateCustomer,
+	deleteCustomer,
+	searchCustomer,
 };
