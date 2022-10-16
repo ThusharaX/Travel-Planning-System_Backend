@@ -23,6 +23,7 @@ import {
 	updateHotelPackage,
 	deleteHotelPackage,
 	searchHotelPackages,
+	getAllHotelPackagesByHotelOwnerId,
 } from "./HotelPackage.controller";
 
 import {
@@ -43,7 +44,12 @@ import {
 	searchTourPacakges,
 } from "./TourPackage.controller";
 
-import { getHotelOwnerDetails, loginHotelOwner, registerHotelOwner } from "./HotelOwner.controller";
+import {
+	getHotelOwnerDetails,
+	loginHotelOwner,
+	registerHotelOwner,
+	editHotelOwnerDetails,
+} from "./HotelOwner.controller";
 
 import {
 	loginTourGuide,
@@ -90,6 +96,7 @@ export default {
 	updateHotelPackage,
 	deleteHotelPackage,
 	searchHotelPackages,
+	getAllHotelPackagesByHotelOwnerId,
 
 	// Camping Package Controllers
 	insertCampingPackage,
@@ -111,6 +118,7 @@ export default {
 	getHotelOwnerDetails,
 	loginHotelOwner,
 	registerHotelOwner,
+	editHotelOwnerDetails,
 
 	// Tour Guide Controller
 	loginTourGuide,

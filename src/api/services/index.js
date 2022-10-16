@@ -15,6 +15,7 @@ import {
 	updateHotelPackage,
 	deleteHotelPackage,
 	searchHotelPackages,
+	getAllHotelPackagesByHotelOwnerId,
 } from "./HotelPackage.service";
 
 import {
@@ -35,7 +36,12 @@ import {
 	searchTourPacakges,
 } from "./TourPackage.service";
 
-import { getHotelOwnerDetails, authenticateHotelOwner, insertHotelOwner } from "./HotelOwner.service";
+import {
+	getHotelOwnerDetails,
+	authenticateHotelOwner,
+	insertHotelOwner,
+	editHotelOwnerDetails,
+} from "./HotelOwner.service";
 
 import {
 	authenticateTourGuide,
@@ -83,6 +89,7 @@ export default {
 	updateHotelPackage,
 	deleteHotelPackage,
 	searchHotelPackages,
+	getAllHotelPackagesByHotelOwnerId,
 
 	// Camping Package services
 	insertCampingPackage,
@@ -104,6 +111,7 @@ export default {
 	getHotelOwnerDetails,
 	authenticateHotelOwner,
 	insertHotelOwner,
+	editHotelOwnerDetails,
 
 	// Tour Guide Servvices
 	authenticateTourGuide,
