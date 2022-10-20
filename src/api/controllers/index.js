@@ -73,6 +73,19 @@ import {
 	searchCampingVendors,
 } from "./CampingVendor.controller";
 
+
+import { loginVehicleOwner, registerVehicleOwner } from "./VehicleOwner.controller";
+
+import {
+	insertVehiclePackage,
+	getAllVehiclePackages,
+	getOneVehiclePackage,
+	updateVehiclePackage,
+	deleteVehiclePackage,
+	searchVehiclesPackage,
+} from "./VehiclePackage.controller";
+
+
 import {
 	loginVehicleOwner,
 	registerVehicleOwner,
@@ -92,6 +105,7 @@ import {
 	deleteCustomer,
 	searchCustomer,
 } from "./Customer.controller";
+
 export default {
 	//Sample Controllers
 	insertSample,
@@ -164,6 +178,15 @@ export default {
 	deleteCampingVendor,
 	searchCampingVendors,
 
+
+	//Vehicle Package Controller
+	insertVehiclePackage,
+	getAllVehiclePackages,
+	getOneVehiclePackage,
+	updateVehiclePackage,
+	deleteVehiclePackage,
+	searchVehiclesPackage,
+
 	// Vehicle Owner Controller
 	registerVehicleOwner,
 	loginVehicleOwner,
@@ -181,4 +204,5 @@ export default {
 	updateCustomer,
 	deleteCustomer,
 	searchCustomer,
+
 };

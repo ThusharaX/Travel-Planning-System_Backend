@@ -85,6 +85,15 @@ import {
 	searchCustomer,
 } from "./Customer.Service";
 
+import {
+	insertVehiclePackage,
+	getAllVehiclePackages,
+	getOneVehiclePackage,
+	updateVehiclePackage,
+	deleteVehiclePackage,
+	searchVehiclesPackage,
+} from "./VehiclePackage.service";
+
 export default {
 	// Sample services
 	insertSample,
@@ -157,6 +166,15 @@ export default {
 	deleteCampingVendor,
 	searchCampingVendor,
 
+
+	//Vehicle Package Services
+	insertVehiclePackage,
+	getAllVehiclePackages,
+	getOneVehiclePackage,
+	updateVehiclePackage,
+	deleteVehiclePackage,
+	searchVehiclesPackage,
+
 	// Vehicle Owner Services
 	authenticateVehicleOwner,
 	insertVehicleOwner,
@@ -174,4 +192,5 @@ export default {
 	updateCustomer,
 	deleteCustomer,
 	searchCustomer,
+
 };

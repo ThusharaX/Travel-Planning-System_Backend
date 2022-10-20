@@ -98,4 +98,12 @@ router.put("/customer/:id", controller.updateCustomer);
 router.delete("/customer/:id", controller.deleteCustomer);
 router.get("/customer/search/:search", controller.searchCustomer);
 
+// vehicle Package endpoints
+router.post("/vehicle-package/", controller.insertVehiclePackage); // insert one vehicle Package
+router.get("/vehicle-package/", controller.getAllVehiclePackages); // get all vehicle packages
+router.get("/vehicle-package/:id", controller.getOneVehiclePackage); // get one vehicle package
+router.put("/vehicle-package/:id", controller.updateVehiclePackage); // update one vehicle package
+router.delete("/vehicle-package/:id", controller.deleteVehiclePackage); // delete one vehicles package
+router.get("/vehicle-package/search/:search", controller.searchVehiclesPackage); // search vehicle package
+
 export default router;
