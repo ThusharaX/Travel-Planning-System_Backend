@@ -73,9 +73,6 @@ import {
 	searchCampingVendors,
 } from "./CampingVendor.controller";
 
-
-import { loginVehicleOwner, registerVehicleOwner } from "./VehicleOwner.controller";
-
 import {
 	insertVehiclePackage,
 	getAllVehiclePackages,
@@ -84,7 +81,6 @@ import {
 	deleteVehiclePackage,
 	searchVehiclesPackage,
 } from "./VehiclePackage.controller";
-
 
 import {
 	loginVehicleOwner,
@@ -178,7 +174,6 @@ export default {
 	deleteCampingVendor,
 	searchCampingVendors,
 
-
 	//Vehicle Package Controller
 	insertVehiclePackage,
 	getAllVehiclePackages,
@@ -204,5 +199,4 @@ export default {
 	updateCustomer,
 	deleteCustomer,
 	searchCustomer,
-
 };

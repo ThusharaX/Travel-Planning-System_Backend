@@ -166,7 +166,6 @@ export default {
 	deleteCampingVendor,
 	searchCampingVendor,
 
-
 	//Vehicle Package Services
 	insertVehiclePackage,
 	getAllVehiclePackages,
@@ -192,5 +191,4 @@ export default {
 	updateCustomer,
 	deleteCustomer,
 	searchCustomer,
-
 };
