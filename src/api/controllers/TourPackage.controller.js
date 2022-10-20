@@ -1,8 +1,9 @@
-import SampleService from "../services";
+import TourPackageService from "../services";
 
-// Insert one sample
-export const insertSample = async (request, response, next) => {
-	await SampleService.insertSample(request.body)
+// Insert one Tour Pacakges
+
+export const insertTourPackage = async (request, response, next) => {
+	await TourPackageService.insertTourPackage(request.body)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -13,9 +14,10 @@ export const insertSample = async (request, response, next) => {
 		});
 };
 
-// Get all samples
-export const getAllSamples = async (request, response, next) => {
-	await SampleService.getAllSamples("users")
+// Get all Tour Pacakges
+
+export const getAllTourPackages = async (request, response, next) => {
+	await TourPackageService.getAllTourPackages("users")
 		.then(async (data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -26,9 +28,9 @@ export const getAllSamples = async (request, response, next) => {
 		});
 };
 
-// Get one sample
-export const getOneSample = async (request, response, next) => {
-	await SampleService.getOneSample(request.params.id)
+// Get one tour pacakges
+export const getOneTourPackage = async (request, response, next) => {
+	await TourPackageService.getOneTourPackage(request.params.id)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -39,9 +41,10 @@ export const getOneSample = async (request, response, next) => {
 		});
 };
 
-// Update one sample
-export const updateSample = async (request, response, next) => {
-	await SampleService.updateSample(request.params.id, request.body)
+// Update one tour package
+
+export const updateTourPackage = async (request, response, next) => {
+	await TourPackageService.updateTourPackage(request.params.id, request.body)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -52,9 +55,9 @@ export const updateSample = async (request, response, next) => {
 		});
 };
 
-// Delete one sample
-export const deleteSample = async (request, response, next) => {
-	await SampleService.deleteSample(request.params.id)
+// Delete one tour pacakge
+export const deleteTourPacakge = async (request, response, next) => {
+	await TourPackageService.deleteTourPacakge(request.params.id)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -65,9 +68,9 @@ export const deleteSample = async (request, response, next) => {
 		});
 };
 
-// Search samples
-export const searchSamples = async (request, response, next) => {
-	await SampleService.searchSamples(request.params.search)
+// Search Tour Pacakges
+export const searchTourPacakges = async (request, response, next) => {
+	await TourPackageService.searchTourPacakges(request.params.search)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -77,5 +80,3 @@ export const searchSamples = async (request, response, next) => {
 			next();
 		});
 };
-
-// Test
