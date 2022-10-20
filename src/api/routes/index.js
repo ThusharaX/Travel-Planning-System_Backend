@@ -57,6 +57,12 @@ router.post("/hotel-owner/login", controller.loginHotelOwner);
 router.post("/hotel-owner/register", controller.registerHotelOwner);
 router.put("/hotel-owner-edit/:id", controller.editHotelOwnerDetails);
 
+// Admin endpoints
+router.get("/admin/:id", controller.getAdminDetails);
+router.post("/admin/login", controller.loginAdmin);
+router.post("/admin/register", controller.registerAdmin);
+router.put("/admin-edit/:id", controller.editAdminDetails);
+
 // Tour Guide endpoints
 router.post("/tour-guide/register/", controller.registerTourGuide); // Register Tour Guide
 router.post("/tour-guide/login/", controller.loginTourGuide); // Login Tour Guide

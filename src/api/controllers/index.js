@@ -51,6 +51,8 @@ import {
 	editHotelOwnerDetails,
 } from "./HotelOwner.controller";
 
+import { getAdminDetails, loginAdmin, registerAdmin, editAdminDetails } from "./Admin.controller";
+
 import {
 	loginTourGuide,
 	registerTourGuide,
@@ -137,6 +139,12 @@ export default {
 	loginHotelOwner,
 	registerHotelOwner,
 	editHotelOwnerDetails,
+
+	// Admin Controller
+	getAdminDetails,
+	loginAdmin,
+	registerAdmin,
+	editAdminDetails,
 
 	// Tour Guide Controller
 	loginTourGuide,

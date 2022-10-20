@@ -47,7 +47,7 @@ export const registerHotelOwner = async (req, res, next) => {
 		hotelAddress: req.body.hotelAddress,
 		companyPhoneNumber: req.body.companyPhoneNumber,
 		companyRegNo: req.body.companyRegNo,
-		profilePicture: "https://www.seekpng.com/png/full/514-5147412_default-avatar-icon.png",
+		profilePicture: req.body.profilePicture,
 		permissionLevel: "HOTEL_OWNER",
 	};
 
