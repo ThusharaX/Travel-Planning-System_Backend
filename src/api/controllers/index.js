@@ -66,6 +66,16 @@ import {
 } from "./CampingVendor.controller";
 
 import { loginVehicleOwner, registerVehicleOwner } from "./VehicleOwner.controller";
+
+import {
+	insertVehiclePackage,
+	getAllVehiclePackages,
+	getOneVehiclePackage,
+	updateVehiclePackage,
+	deleteVehiclePackage,
+	searchVehiclesPackage,
+} from "./VehiclePackage.controller";
+
 export default {
 	//Sample Controllers
 	insertSample,
@@ -133,4 +143,12 @@ export default {
 	updateCampingVendor,
 	deleteCampingVendor,
 	searchCampingVendors,
+
+	//Vehicle Package Controller
+	insertVehiclePackage,
+	getAllVehiclePackages,
+	getOneVehiclePackage,
+	updateVehiclePackage,
+	deleteVehiclePackage,
+	searchVehiclesPackage,
 };

@@ -59,6 +59,15 @@ import {
 
 import { authenticateVehicleOwner, insertVehicleOwner } from "./VehicleOwner.Service";
 
+import {
+	insertVehiclePackage,
+	getAllVehiclePackages,
+	getOneVehiclePackage,
+	updateVehiclePackage,
+	deleteVehiclePackage,
+	searchVehiclesPackage,
+} from "./VehiclePackage.service";
+
 export default {
 	// Sample services
 	insertSample,
@@ -126,4 +135,12 @@ export default {
 	updateCampingVendor,
 	deleteCampingVendor,
 	searchCampingVendor,
+
+	//Vehicle Package Services
+	insertVehiclePackage,
+	getAllVehiclePackages,
+	getOneVehiclePackage,
+	updateVehiclePackage,
+	deleteVehiclePackage,
+	searchVehiclesPackage,
 };
