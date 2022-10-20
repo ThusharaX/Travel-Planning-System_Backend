@@ -43,6 +43,8 @@ import {
 	editHotelOwnerDetails,
 } from "./HotelOwner.service";
 
+import { getAdminDetails, authenticateAdmin, insertAdmin, editAdminDetails } from "./Admin.service";
+
 import {
 	authenticateTourGuide,
 	insertTourGuide,
@@ -130,6 +132,12 @@ export default {
 	authenticateHotelOwner,
 	insertHotelOwner,
 	editHotelOwnerDetails,
+
+	// Hotel Owner Service
+	getAdminDetails,
+	authenticateAdmin,
+	insertAdmin,
+	editAdminDetails,
 
 	// Tour Guide Servvices
 	authenticateTourGuide,
