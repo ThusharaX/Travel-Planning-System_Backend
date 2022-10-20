@@ -33,6 +33,7 @@ router.get("/hotel-package/:id", controller.getOneHotelPackage); // get one hote
 router.put("/hotel-package/:id", controller.updateHotelPackage); // update one hotel package
 router.delete("/hotel-package/:id", controller.deleteHotelPackage); // delete one hotel package
 router.get("/hotel-package/search/:search", controller.searchHotelPackages); // search hotel packages
+router.get("/hotel-packages/hotel-owner/:id", controller.getAllHotelPackagesByHotelOwnerId); // get all hotel packages by hotel owner id
 
 // Camping Packages endpoints
 router.post("/camping-package/", controller.insertCampingPackage); // insert one Camping package
@@ -54,15 +55,22 @@ router.get("/tour-package/search/:search", controller.searchTourPacakges);
 router.get("/hotel-owner/:id", controller.getHotelOwnerDetails);
 router.post("/hotel-owner/login", controller.loginHotelOwner);
 router.post("/hotel-owner/register", controller.registerHotelOwner);
+router.put("/hotel-owner-edit/:id", controller.editHotelOwnerDetails);
+
+// Admin endpoints
+router.get("/admin/:id", controller.getAdminDetails);
+router.post("/admin/login", controller.loginAdmin);
+router.post("/admin/register", controller.registerAdmin);
+router.put("/admin-edit/:id", controller.editAdminDetails);
 
 // Tour Guide endpoints
-router.post("/tour-guide/register/", controller.registerTourGuide);
-router.post("/tour-guide/login/", controller.loginTourGuide);
-router.get("/tour-guide/", controller.getAllTourGuides);
-router.get("/tour-guide/:id", controller.getOneTourGuide);
-router.put("/tour-guide/:id", controller.updateTourGuide);
-router.delete("/tour-guide/:id", controller.deleteTourGuide);
-router.get("/tour-guide/search/:search", controller.searchTourGuide);
+router.post("/tour-guide/register/", controller.registerTourGuide); // Register Tour Guide
+router.post("/tour-guide/login/", controller.loginTourGuide); // Login Tour Guide
+router.get("/tour-guide/", controller.getAllTourGuides); // Get all tour guide
+router.get("/tour-guide/:id", controller.getOneTourGuide); // get one tour guide
+router.put("/tour-guide/:id", controller.updateTourGuide); // edit tour guide
+router.delete("/tour-guide/:id", controller.deleteTourGuide); // delete tour guide
+router.get("/tour-guide/search/:search", controller.searchTourGuide); // search tour guide
 
 // Camping Vendor endpoints
 router.post("/camping-vendor/register/", controller.registerCampingVendor);
@@ -76,6 +84,19 @@ router.get("/camping-vendor/search/:search", controller.searchCampingVendors); /
 // Vehicle Owner Endpoints
 router.post("/vehicle-owner/register/", controller.registerVehicleOwner);
 router.post("/vehicle-owner/login/", controller.loginVehicleOwner);
+router.get("/vehicle-owner/", controller.getAllVehicleOwners);
+router.get("/vehicle-owner/:id", controller.getOneVehicleOwner);
+router.put("/vehicle-owner/:id", controller.updateVehicleOwner);
+router.delete("/vehicle-owner/:id", controller.deleteVehicleOwner);
+router.get("/vehicle-owner/search/:search", controller.searchVehicleOwner);
+
+// Customer Endpoints
+router.post("/customer/register/", controller.registerCustomer);
+router.get("/customer/", controller.getAllCustomers);
+router.get("/customer/:id", controller.getOneCustomer);
+router.put("/customer/:id", controller.updateCustomer);
+router.delete("/customer/:id", controller.deleteCustomer);
+router.get("/customer/search/:search", controller.searchCustomer);
 
 // vehicle Package endpoints
 router.post("/vehicle-package/", controller.insertVehiclePackage); // insert one vehicle Package

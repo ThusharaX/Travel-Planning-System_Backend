@@ -23,6 +23,7 @@ import {
 	updateHotelPackage,
 	deleteHotelPackage,
 	searchHotelPackages,
+	getAllHotelPackagesByHotelOwnerId,
 } from "./HotelPackage.controller";
 
 import {
@@ -43,7 +44,14 @@ import {
 	searchTourPacakges,
 } from "./TourPackage.controller";
 
-import { getHotelOwnerDetails, loginHotelOwner, registerHotelOwner } from "./HotelOwner.controller";
+import {
+	getHotelOwnerDetails,
+	loginHotelOwner,
+	registerHotelOwner,
+	editHotelOwnerDetails,
+} from "./HotelOwner.controller";
+
+import { getAdminDetails, loginAdmin, registerAdmin, editAdminDetails } from "./Admin.controller";
 
 import {
 	loginTourGuide,
@@ -65,6 +73,7 @@ import {
 	searchCampingVendors,
 } from "./CampingVendor.controller";
 
+
 import { loginVehicleOwner, registerVehicleOwner } from "./VehicleOwner.controller";
 
 import {
@@ -75,6 +84,27 @@ import {
 	deleteVehiclePackage,
 	searchVehiclesPackage,
 } from "./VehiclePackage.controller";
+
+
+import {
+	loginVehicleOwner,
+	registerVehicleOwner,
+	getAllVehicleOwners,
+	getOneVehicleOwner,
+	updateVehicleOwner,
+	deleteVehicleOwner,
+	searchVehicleOwner,
+} from "./VehicleOwner.controller";
+
+import {
+	loginCustomer,
+	registerCustomer,
+	getAllCustomers,
+	getOneCustomer,
+	updateCustomer,
+	deleteCustomer,
+	searchCustomer,
+} from "./Customer.controller";
 
 export default {
 	//Sample Controllers
@@ -100,6 +130,7 @@ export default {
 	updateHotelPackage,
 	deleteHotelPackage,
 	searchHotelPackages,
+	getAllHotelPackagesByHotelOwnerId,
 
 	// Camping Package Controllers
 	insertCampingPackage,
@@ -121,6 +152,13 @@ export default {
 	getHotelOwnerDetails,
 	loginHotelOwner,
 	registerHotelOwner,
+	editHotelOwnerDetails,
+
+	// Admin Controller
+	getAdminDetails,
+	loginAdmin,
+	registerAdmin,
+	editAdminDetails,
 
 	// Tour Guide Controller
 	loginTourGuide,
@@ -134,15 +172,12 @@ export default {
 	// Camping Vendor Controller
 	loginCampingVendor,
 	registerCampingVendor,
-
-	// Vehicle Owner Controller
-	registerVehicleOwner,
-	loginVehicleOwner,
 	getAllCampingVendors,
 	getOneCampingVendor,
 	updateCampingVendor,
 	deleteCampingVendor,
 	searchCampingVendors,
+
 
 	//Vehicle Package Controller
 	insertVehiclePackage,
@@ -151,4 +186,23 @@ export default {
 	updateVehiclePackage,
 	deleteVehiclePackage,
 	searchVehiclesPackage,
+
+	// Vehicle Owner Controller
+	registerVehicleOwner,
+	loginVehicleOwner,
+	getAllVehicleOwners,
+	getOneVehicleOwner,
+	updateVehicleOwner,
+	deleteVehicleOwner,
+	searchVehicleOwner,
+
+	// Customer Controller
+	loginCustomer,
+	registerCustomer,
+	getAllCustomers,
+	getOneCustomer,
+	updateCustomer,
+	deleteCustomer,
+	searchCustomer,
+
 };

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 import jwt from "jsonwebtoken";
 
-const CustomerSchema = new mongoose.Schema(
+const AdminSchema = new mongoose.Schema(
 	{
 		name: {
 			type: String,
@@ -11,25 +11,15 @@ const CustomerSchema = new mongoose.Schema(
 		email: {
 			type: String,
 			required: true,
-		},
-		nic: {
-			type: String,
-			required: true,
-		},
-		contactNumber: {
-			type: String,
-			required: true,
+			unique: true,
 		},
 		password: {
 			type: String,
 			required: true,
 		},
-		profilePicture: {
-			type: String,
-		},
 		permissionLevel: {
 			type: String,
-			default: "CUSTOMER",
+			default: "ADMIN",
 			required: true,
 		},
 		authToken: {
@@ -42,33 +32,34 @@ const CustomerSchema = new mongoose.Schema(
 			default: null,
 		},
 	},
-
 	{
 		timestamps: true,
 	}
 );
 
-CustomerSchema.pre("save", async function (next) {
+AdminSchema.pre("save", async function (next) {
 	const user = this;
 	const password = user.password;
 
 	if (!user.isModified("password")) {
 		return next();
 	}
-	// Number of rounds hash functions wiil execute
+
+	// Number of rounds hash function will execute
 	const salt = await bcrypt.genSalt(10);
+
 	const hash = await bcrypt.hashSync(password, salt);
 	user.password = hash;
 	return next();
 });
 
-CustomerSchema.methods.generateAuthToken = async function () {
+AdminSchema.methods.generateAuthToken = async function () {
 	const user = this;
 	const secret = process.env.JWT_SECRET;
 
 	const authToken = jwt.sign(
 		{
-			id: user._id,
+			_id: user._id,
 			permissionLevel: user.permissionLevel,
 		},
 		secret
@@ -78,8 +69,8 @@ CustomerSchema.methods.generateAuthToken = async function () {
 	return authToken;
 };
 
-CustomerSchema.methods.matchPassword = async function (enteredPassword) {
+AdminSchema.methods.matchPassword = async function (enteredPassword) {
 	return await bcrypt.compare(enteredPassword, this.password);
 };
 
-module.exports = mongoose.model("Customer", CustomerSchema);
+module.exports = mongoose.model("Admin", AdminSchema);

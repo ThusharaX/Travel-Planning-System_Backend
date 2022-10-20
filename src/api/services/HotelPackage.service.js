@@ -82,3 +82,14 @@ export const searchHotelPackages = async (searchTerm) => {
 			throw new Error(error.message);
 		});
 };
+
+// Get all hotel packages for hotel_owner_id=owner_id
+export const getAllHotelPackagesByHotelOwnerId = async (owner_id) => {
+	return await HotelPackageModel.find({ hotel_owner_id: owner_id })
+		.then((hotel_packages) => {
+			return hotel_packages;
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};

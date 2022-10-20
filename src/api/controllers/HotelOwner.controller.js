@@ -47,7 +47,7 @@ export const registerHotelOwner = async (req, res, next) => {
 		hotelAddress: req.body.hotelAddress,
 		companyPhoneNumber: req.body.companyPhoneNumber,
 		companyRegNo: req.body.companyRegNo,
-		profilePicture: "https://www.seekpng.com/png/full/514-5147412_default-avatar-icon.png",
+		profilePicture: req.body.profilePicture,
 		permissionLevel: "HOTEL_OWNER",
 	};
 
@@ -67,6 +67,30 @@ export const registerHotelOwner = async (req, res, next) => {
 // Get Hotel Owner Details
 export const getHotelOwnerDetails = async (req, res, next) => {
 	await HotelOwnerService.getHotelOwnerDetails(req.params.id)
+		.then((data) => {
+			req.handleResponse.successRespond(res)(data);
+			next();
+		})
+		.catch((error) => {
+			req.handleResponse.errorRespond(res)(error.message);
+			next();
+		});
+};
+
+// Edit Hotel Owner Details
+export const editHotelOwnerDetails = async (req, res, next) => {
+	const user = {
+		ownerName: req.body.ownerName,
+		email: req.body.email,
+		nic: req.body.nic,
+		contactNumber: req.body.contactNumber,
+		hotelName: req.body.hotelName,
+		hotelAddress: req.body.hotelAddress,
+		companyPhoneNumber: req.body.companyPhoneNumber,
+		companyRegNo: req.body.companyRegNo,
+	};
+
+	await HotelOwnerService.editHotelOwnerDetails(req.params.id, user)
 		.then((data) => {
 			req.handleResponse.successRespond(res)(data);
 			next();

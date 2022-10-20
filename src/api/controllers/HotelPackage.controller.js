@@ -77,3 +77,16 @@ export const searchHotelPackages = async (request, response, next) => {
 			next();
 		});
 };
+
+// Get all hotel packages by hotel_owner_id
+export const getAllHotelPackagesByHotelOwnerId = async (request, response, next) => {
+	await HotelPackageService.getAllHotelPackagesByHotelOwnerId(request.params.id)
+		.then((data) => {
+			request.handleResponse.successRespond(response)(data);
+			next();
+		})
+		.catch((error) => {
+			request.handleResponse.errorRespond(response)(error.message);
+			next();
+		});
+};

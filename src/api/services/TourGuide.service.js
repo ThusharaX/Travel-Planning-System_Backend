@@ -53,7 +53,7 @@ export const getOneTourGuide = async (tour_guideId) => {
 
 // Update one tour guide
 export const updateTourGuide = async (tour_guideId, tour_guideData) => {
-	return await TourGuideModel.findById(tour_guideId, tour_guideData, {
+	return await TourGuideModel.findByIdAndUpdate(tour_guideId, tour_guideData, {
 		new: true,
 	})
 		.then((tour_guide) => {

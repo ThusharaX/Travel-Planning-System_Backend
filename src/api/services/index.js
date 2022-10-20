@@ -15,6 +15,7 @@ import {
 	updateHotelPackage,
 	deleteHotelPackage,
 	searchHotelPackages,
+	getAllHotelPackagesByHotelOwnerId,
 } from "./HotelPackage.service";
 
 import {
@@ -35,7 +36,14 @@ import {
 	searchTourPacakges,
 } from "./TourPackage.service";
 
-import { getHotelOwnerDetails, authenticateHotelOwner, insertHotelOwner } from "./HotelOwner.service";
+import {
+	getHotelOwnerDetails,
+	authenticateHotelOwner,
+	insertHotelOwner,
+	editHotelOwnerDetails,
+} from "./HotelOwner.service";
+
+import { getAdminDetails, authenticateAdmin, insertAdmin, editAdminDetails } from "./Admin.service";
 
 import {
 	authenticateTourGuide,
@@ -57,7 +65,25 @@ import {
 	searchCampingVendor,
 } from "./CampingVendor.service";
 
-import { authenticateVehicleOwner, insertVehicleOwner } from "./VehicleOwner.Service";
+import {
+	authenticateVehicleOwner,
+	insertVehicleOwner,
+	getAllVehicleOwners,
+	getOneVehicleOwner,
+	updateVehicleOwner,
+	deleteVehicleOwner,
+	searchVehicleOwner,
+} from "./VehicleOwner.Service";
+
+import {
+	authenticateCustomer,
+	insertCustomer,
+	getAllCustomers,
+	getOneCustomer,
+	updateCustomer,
+	deleteCustomer,
+	searchCustomer,
+} from "./Customer.Service";
 
 import {
 	insertVehiclePackage,
@@ -92,6 +118,7 @@ export default {
 	updateHotelPackage,
 	deleteHotelPackage,
 	searchHotelPackages,
+	getAllHotelPackagesByHotelOwnerId,
 
 	// Camping Package services
 	insertCampingPackage,
@@ -113,6 +140,13 @@ export default {
 	getHotelOwnerDetails,
 	authenticateHotelOwner,
 	insertHotelOwner,
+	editHotelOwnerDetails,
+
+	// Hotel Owner Service
+	getAdminDetails,
+	authenticateAdmin,
+	insertAdmin,
+	editAdminDetails,
 
 	// Tour Guide Servvices
 	authenticateTourGuide,
@@ -126,15 +160,12 @@ export default {
 	// Camping Vendor Services
 	authenticateCampingVendor,
 	insertCampingVendor,
-
-	// Vehicle Owner Services
-	authenticateVehicleOwner,
-	insertVehicleOwner,
 	getAllCampingVendors,
 	getOneCampingVendor,
 	updateCampingVendor,
 	deleteCampingVendor,
 	searchCampingVendor,
+
 
 	//Vehicle Package Services
 	insertVehiclePackage,
@@ -143,4 +174,23 @@ export default {
 	updateVehiclePackage,
 	deleteVehiclePackage,
 	searchVehiclesPackage,
+
+	// Vehicle Owner Services
+	authenticateVehicleOwner,
+	insertVehicleOwner,
+	getAllVehicleOwners,
+	getOneVehicleOwner,
+	updateVehicleOwner,
+	deleteVehicleOwner,
+	searchVehicleOwner,
+
+	// Customer
+	authenticateCustomer,
+	insertCustomer,
+	getAllCustomers,
+	getOneCustomer,
+	updateCustomer,
+	deleteCustomer,
+	searchCustomer,
+
 };
