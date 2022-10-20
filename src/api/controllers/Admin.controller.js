@@ -88,3 +88,16 @@ export const editAdminDetails = async (req, res, next) => {
 			next();
 		});
 };
+
+// Get All Hotel Owners
+export const getAllHotelOwners = async (req, res, next) => {
+	await AdminService.getAllHotelOwners()
+		.then((data) => {
+			req.handleResponse.successRespond(res)(data);
+			next();
+		})
+		.catch((error) => {
+			req.handleResponse.errorRespond(res)(error.message);
+			next();
+		});
+};

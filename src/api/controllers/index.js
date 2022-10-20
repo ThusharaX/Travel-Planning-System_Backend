@@ -49,9 +49,10 @@ import {
 	loginHotelOwner,
 	registerHotelOwner,
 	editHotelOwnerDetails,
+	deleteHotelOwner,
 } from "./HotelOwner.controller";
 
-import { getAdminDetails, loginAdmin, registerAdmin, editAdminDetails } from "./Admin.controller";
+import { getAdminDetails, loginAdmin, registerAdmin, editAdminDetails, getAllHotelOwners } from "./Admin.controller";
 
 import {
 	loginTourGuide,
@@ -74,6 +75,15 @@ import {
 } from "./CampingVendor.controller";
 
 import {
+	insertVehiclePackage,
+	getAllVehiclePackages,
+	getOneVehiclePackage,
+	updateVehiclePackage,
+	deleteVehiclePackage,
+	searchVehiclesPackage,
+} from "./VehiclePackage.controller";
+
+import {
 	loginVehicleOwner,
 	registerVehicleOwner,
 	getAllVehicleOwners,
@@ -92,6 +102,7 @@ import {
 	deleteCustomer,
 	searchCustomer,
 } from "./Customer.controller";
+
 export default {
 	//Sample Controllers
 	insertSample,
@@ -139,12 +150,14 @@ export default {
 	loginHotelOwner,
 	registerHotelOwner,
 	editHotelOwnerDetails,
+	deleteHotelOwner,
 
 	// Admin Controller
 	getAdminDetails,
 	loginAdmin,
 	registerAdmin,
 	editAdminDetails,
+	getAllHotelOwners,
 
 	// Tour Guide Controller
 	loginTourGuide,
@@ -163,6 +176,14 @@ export default {
 	updateCampingVendor,
 	deleteCampingVendor,
 	searchCampingVendors,
+
+	//Vehicle Package Controller
+	insertVehiclePackage,
+	getAllVehiclePackages,
+	getOneVehiclePackage,
+	updateVehiclePackage,
+	deleteVehiclePackage,
+	searchVehiclesPackage,
 
 	// Vehicle Owner Controller
 	registerVehicleOwner,

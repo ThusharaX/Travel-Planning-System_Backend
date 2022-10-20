@@ -41,9 +41,10 @@ import {
 	authenticateHotelOwner,
 	insertHotelOwner,
 	editHotelOwnerDetails,
+	deleteHotelOwner,
 } from "./HotelOwner.service";
 
-import { getAdminDetails, authenticateAdmin, insertAdmin, editAdminDetails } from "./Admin.service";
+import { getAdminDetails, authenticateAdmin, insertAdmin, editAdminDetails, getAllHotelOwners } from "./Admin.service";
 
 import {
 	authenticateTourGuide,
@@ -84,6 +85,15 @@ import {
 	deleteCustomer,
 	searchCustomer,
 } from "./Customer.Service";
+
+import {
+	insertVehiclePackage,
+	getAllVehiclePackages,
+	getOneVehiclePackage,
+	updateVehiclePackage,
+	deleteVehiclePackage,
+	searchVehiclesPackage,
+} from "./VehiclePackage.service";
 
 export default {
 	// Sample services
@@ -132,12 +142,14 @@ export default {
 	authenticateHotelOwner,
 	insertHotelOwner,
 	editHotelOwnerDetails,
+	deleteHotelOwner,
 
-	// Hotel Owner Service
+	// Admin Service
 	getAdminDetails,
 	authenticateAdmin,
 	insertAdmin,
 	editAdminDetails,
+	getAllHotelOwners,
 
 	// Tour Guide Servvices
 	authenticateTourGuide,
@@ -156,6 +168,14 @@ export default {
 	updateCampingVendor,
 	deleteCampingVendor,
 	searchCampingVendor,
+
+	//Vehicle Package Services
+	insertVehiclePackage,
+	getAllVehiclePackages,
+	getOneVehiclePackage,
+	updateVehiclePackage,
+	deleteVehiclePackage,
+	searchVehiclesPackage,
 
 	// Vehicle Owner Services
 	authenticateVehicleOwner,

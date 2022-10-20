@@ -1,4 +1,5 @@
 import AdminModel from "../models/Admin.model";
+import HotelOwnerModel from "../models/HotelOwner.model";
 
 export const authenticateAdmin = async (email, password) => {
 	return await AdminModel.findOne({ email })
@@ -41,6 +42,17 @@ export const editAdminDetails = async (userId, Admin) => {
 	return await AdminModel.findByIdAndUpdate(userId, Admin, { new: true })
 		.then((Admin) => {
 			return Admin;
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};
+
+// Get All Hotel Owners
+export const getAllHotelOwners = async () => {
+	return await HotelOwnerModel.find()
+		.then((hotelOwners) => {
+			return hotelOwners;
 		})
 		.catch((error) => {
 			throw new Error(error.message);

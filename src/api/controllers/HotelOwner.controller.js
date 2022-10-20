@@ -100,3 +100,16 @@ export const editHotelOwnerDetails = async (req, res, next) => {
 			next();
 		});
 };
+
+// Delete Hotel Owner
+export const deleteHotelOwner = async (req, res, next) => {
+	await HotelOwnerService.deleteHotelOwner(req.params.id)
+		.then((data) => {
+			req.handleResponse.successRespond(res)(data);
+			next();
+		})
+		.catch((error) => {
+			req.handleResponse.errorRespond(res)(error.message);
+			next();
+		});
+};
