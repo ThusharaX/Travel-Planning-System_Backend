@@ -98,6 +98,7 @@ router.get("/vehicle-owner/search/:search", controller.searchVehicleOwner);
 
 // Customer Endpoints
 router.post("/customer/register/", controller.registerCustomer);
+router.post("/customer/login", controller.loginCustomer);
 router.get("/customer/", controller.getAllCustomers);
 router.get("/customer/:id", controller.getOneCustomer);
 router.put("/customer/:id", controller.updateCustomer);
