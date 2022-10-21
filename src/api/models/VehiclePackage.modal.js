@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const VehiclePackageSchema = new mongoose.Schema({
+	ownerId: {
+		type: String,
+		require: true,
+	},
 	packageName: {
 		type: String,
 		required: true,
