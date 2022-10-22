@@ -1,34 +1,39 @@
 const mongoose = require("mongoose");
 
-const VehicleSchema = new mongoose.Schema({
+const VehiclePackageSchema = new mongoose.Schema({
 	ownerId: {
 		type: String,
-		required: true,
+		require: true,
 	},
-	vehicleType: {
+	packageName: {
 		type: String,
 		required: true,
 	},
-	regNo: {
+	persons: {
 		type: String,
 		required: true,
 	},
-	ownersName: {
+	vehicle: {
 		type: String,
 		required: true,
 	},
-	year: {
+	durantion: {
 		type: String,
 		required: true,
 	},
-	discription: {
+	price: {
 		type: String,
 		required: true,
 	},
-	vehicleImage: {
+	description: {
+		type: String,
+		requred: true,
+	},
+
+	packageImage: {
 		type: Array,
 		required: false,
 	},
 });
 
-module.exports = mongoose.model("Vehicle", VehicleSchema);
+module.exports = mongoose.model("VehiclePackage", VehiclePackageSchema);

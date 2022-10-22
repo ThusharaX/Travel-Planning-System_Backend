@@ -15,6 +15,7 @@ import {
 	updateHotelPackage,
 	deleteHotelPackage,
 	searchHotelPackages,
+	getAllHotelPackagesByHotelOwnerId,
 } from "./HotelPackage.service";
 
 import {
@@ -35,7 +36,15 @@ import {
 	searchTourPacakges,
 } from "./TourPackage.service";
 
-import { getHotelOwnerDetails, authenticateHotelOwner, insertHotelOwner } from "./HotelOwner.service";
+import {
+	getHotelOwnerDetails,
+	authenticateHotelOwner,
+	insertHotelOwner,
+	editHotelOwnerDetails,
+	deleteHotelOwner,
+} from "./HotelOwner.service";
+
+import { getAdminDetails, authenticateAdmin, insertAdmin, editAdminDetails, getAllHotelOwners } from "./Admin.service";
 
 import {
 	authenticateTourGuide,
@@ -67,6 +76,25 @@ import {
 	searchVehicleOwner,
 } from "./VehicleOwner.Service";
 
+import {
+	authenticateCustomer,
+	insertCustomer,
+	getAllCustomers,
+	getOneCustomer,
+	updateCustomer,
+	deleteCustomer,
+	searchCustomer,
+} from "./Customer.Service";
+
+import {
+	insertVehiclePackage,
+	getAllVehiclePackages,
+	getOneVehiclePackage,
+	updateVehiclePackage,
+	deleteVehiclePackage,
+	searchVehiclesPackage,
+} from "./VehiclePackage.service";
+
 export default {
 	// Sample services
 	insertSample,
@@ -91,6 +119,7 @@ export default {
 	updateHotelPackage,
 	deleteHotelPackage,
 	searchHotelPackages,
+	getAllHotelPackagesByHotelOwnerId,
 
 	// Camping Package services
 	insertCampingPackage,
@@ -112,6 +141,15 @@ export default {
 	getHotelOwnerDetails,
 	authenticateHotelOwner,
 	insertHotelOwner,
+	editHotelOwnerDetails,
+	deleteHotelOwner,
+
+	// Admin Service
+	getAdminDetails,
+	authenticateAdmin,
+	insertAdmin,
+	editAdminDetails,
+	getAllHotelOwners,
 
 	// Tour Guide Servvices
 	authenticateTourGuide,
@@ -131,6 +169,14 @@ export default {
 	deleteCampingVendor,
 	searchCampingVendor,
 
+	//Vehicle Package Services
+	insertVehiclePackage,
+	getAllVehiclePackages,
+	getOneVehiclePackage,
+	updateVehiclePackage,
+	deleteVehiclePackage,
+	searchVehiclesPackage,
+
 	// Vehicle Owner Services
 	authenticateVehicleOwner,
 	insertVehicleOwner,
@@ -139,4 +185,13 @@ export default {
 	updateVehicleOwner,
 	deleteVehicleOwner,
 	searchVehicleOwner,
+
+	// Customer
+	authenticateCustomer,
+	insertCustomer,
+	getAllCustomers,
+	getOneCustomer,
+	updateCustomer,
+	deleteCustomer,
+	searchCustomer,
 };

@@ -34,6 +34,10 @@ const HotelPackageSchema = new mongoose.Schema({
 		type: Array,
 		required: true,
 	},
+	hotel_owner_id: {
+		type: String,
+		required: true,
+	},
 });
 
 module.exports = mongoose.model("HotelPackage", HotelPackageSchema);

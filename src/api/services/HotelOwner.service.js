@@ -35,3 +35,25 @@ export const getHotelOwnerDetails = async (userId) => {
 			throw new Error(error.message);
 		});
 };
+
+// Update Hotel Owner Details
+export const editHotelOwnerDetails = async (userId, hotelOwner) => {
+	return await HotelOwnerModel.findByIdAndUpdate(userId, hotelOwner, { new: true })
+		.then((hotelOwner) => {
+			return hotelOwner;
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};
+
+// Delete Hotel Owner
+export const deleteHotelOwner = async (userId) => {
+	return await HotelOwnerModel.findByIdAndDelete(userId)
+		.then((hotelOwner) => {
+			return hotelOwner;
+		})
+		.catch((error) => {
+			throw new Error(error.message);
+		});
+};

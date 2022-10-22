@@ -1,24 +1,22 @@
-import TourGuideService from "../services";
+import CustomerService from "../services";
 import logger from "../../util/logger";
-import TourGuideModel from "../models/TourGuide.model";
+import CustomerModel from "../models/Customer.model";
 
-// Tour Guide Login
-export const loginTourGuide = async (request, response, next) => {
+// Customer Login
+export const loginCustomer = async (request, response, next) => {
 	const { email, password } = request.body;
 
 	if (email && password) {
-		await TourGuideService.authenticateTourGuide(email, password)
-			.then(async (tour_guide) => {
-				const authToken = await tour_guide.generateAuthToken();
+		await CustomerService.authenticateCustomer(email, password)
+			.then(async (customer) => {
+				const authToken = await customer.generateAuthToken();
 				const data = {
-					_id: tour_guide._id,
-					tourGuideName: tour_guide.tourGuideName,
-					email: tour_guide.email,
-					contactNumber: tour_guide.contactNumber,
+					_id: customer._id,
+					name: customer.name,
+					email: customer.email,
 					token: authToken,
-					permissionLevel: tour_guide.permissionLevel,
+					permissionLevel: customer.permissionLevel,
 				};
-
 				request.handleResponse.successRespond(response)(data);
 			})
 			.catch((error) => {
@@ -38,30 +36,26 @@ export const loginTourGuide = async (request, response, next) => {
 	}
 };
 
-// Tour Guide Register
-export const registerTourGuide = async (request, response, next) => {
-	if (await TourGuideModel.findOne({ email: request.body.email })) {
+// Custmer Register
+export const registerCustomer = async (request, response, next) => {
+	if (await CustomerModel.findOne({ email: request.body.email })) {
 		request.handleResponse.errorRespond(response)("Email already exists");
 		next();
-	} else if (await TourGuideModel.findOne({ nic: request.body.nic })) {
+	} else if (await CustomerModel.findOne({ nic: request.body.nic })) {
 		request.handleResponse.errorRespond(response)("NIC already Exists");
 		next();
 	} else {
-		const TourGuide = {
-			tourGuideName: request.body.tourGuideName,
+		const Customer = {
+			name: request.body.name,
 			email: request.body.email,
 			nic: request.body.nic,
 			contactNumber: request.body.contactNumber,
-			guideArea: request.body.guideArea,
-			guideCity: request.body.guideCity,
-			spokenLanguages: request.body.spokenLanguages,
-			motherTongue: request.body.motherTongue,
 			profilePicture: "https://www.seekpng.com/png/full/514-5147412_default-avatar-icon.png",
 			password: request.body.password,
-			permissionLevel: "TOUR_GUIDE",
+			permissionLevel: "CUSTOMER",
 		};
 
-		await TourGuideService.insertTourGuide(TourGuide)
+		await CustomerService.insertCustomer(Customer)
 			.then((data) => {
 				logger.info(`New User with ID ${data._id} created`);
 				request.handleResponse.successRespond(response)(data);
@@ -75,10 +69,9 @@ export const registerTourGuide = async (request, response, next) => {
 	}
 };
 
-// Get all tour gudies
-
-export const getAllTourGuides = async (request, response, next) => {
-	await TourGuideService.getAllTourGuides("users")
+// Get All Customers
+export const getAllCustomers = async (request, response, next) => {
+	await CustomerService.getAllCustomers("users")
 		.then(async (data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -89,9 +82,9 @@ export const getAllTourGuides = async (request, response, next) => {
 		});
 };
 
-// Get one tour guide
-export const getOneTourGuide = async (request, response, next) => {
-	await TourGuideService.getOneTourGuide(request.params.id)
+// Get one customer
+export const getOneCustomer = async (request, response, next) => {
+	await CustomerService.getOneCustomer(request.params.id)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -102,9 +95,9 @@ export const getOneTourGuide = async (request, response, next) => {
 		});
 };
 
-// Update tour guide
-export const updateTourGuide = async (request, response, next) => {
-	await TourGuideService.updateTourGuide(request.params.id, request.body)
+// Update Customer
+export const updateCustomer = async (request, response, next) => {
+	await CustomerService.updateCustomer(request.params.id, request.body)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -115,10 +108,9 @@ export const updateTourGuide = async (request, response, next) => {
 		});
 };
 
-// Delete one tour guide
-
-export const deleteTourGuide = async (request, response, next) => {
-	await TourGuideService.deleteTourGuide(request.params.id)
+// Delete one customer
+export const deleteCustomer = async (request, response, next) => {
+	await CustomerService.deleteCustomer(request.params.id)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();
@@ -129,9 +121,9 @@ export const deleteTourGuide = async (request, response, next) => {
 		});
 };
 
-// Search Tour Guide
-export const searchTourGuide = async (request, response, next) => {
-	await TourGuideService.searchTourGuide(request.params.search)
+// Search Customer
+export const searchCustomer = async (request, response, next) => {
+	await CustomerService.searchCustomer(request.params.search)
 		.then((data) => {
 			request.handleResponse.successRespond(response)(data);
 			next();

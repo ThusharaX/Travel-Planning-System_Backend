@@ -1,19 +1,19 @@
-import HotelOwnerService from "../services";
+import AdminService from "../services";
 import logger from "../../util/logger";
 
-// Hotel Owner Login
-export const loginHotelOwner = async (request, response, next) => {
+// Admin Login
+export const loginAdmin = async (request, response, next) => {
 	const { email, password } = request.body;
 
 	if (email && password) {
-		await HotelOwnerService.authenticateHotelOwner(email, password)
-			.then(async (hotel_owner) => {
-				const authToken = await hotel_owner.generateAuthToken();
+		await AdminService.authenticateAdmin(email, password)
+			.then(async (admin) => {
+				const authToken = await admin.generateAuthToken();
 				const data = {
-					_id: hotel_owner._id,
-					email: hotel_owner.email,
+					_id: admin._id,
+					email: admin.email,
 					token: authToken,
-					permissionLevel: hotel_owner.permissionLevel,
+					permissionLevel: admin.permissionLevel,
 				};
 
 				request.handleResponse.successRespond(response)(data);
@@ -35,23 +35,16 @@ export const loginHotelOwner = async (request, response, next) => {
 	}
 };
 
-// Hotel Owner Register
-export const registerHotelOwner = async (req, res, next) => {
+// Admin Register
+export const registerAdmin = async (req, res, next) => {
 	const user = {
-		ownerName: req.body.ownerName,
+		name: req.body.name,
 		email: req.body.email,
-		nic: req.body.nic,
-		contactNumber: req.body.contactNumber,
 		password: req.body.password,
-		hotelName: req.body.hotelName,
-		hotelAddress: req.body.hotelAddress,
-		companyPhoneNumber: req.body.companyPhoneNumber,
-		companyRegNo: req.body.companyRegNo,
-		profilePicture: req.body.profilePicture,
-		permissionLevel: "HOTEL_OWNER",
+		permissionLevel: "ADMIN",
 	};
 
-	await HotelOwnerService.insertHotelOwner(user)
+	await AdminService.insertAdmin(user)
 		.then((data) => {
 			logger.info(`New user with ID ${data._id} created`);
 			req.handleResponse.successRespond(res)(data);
@@ -64,9 +57,9 @@ export const registerHotelOwner = async (req, res, next) => {
 		});
 };
 
-// Get Hotel Owner Details
-export const getHotelOwnerDetails = async (req, res, next) => {
-	await HotelOwnerService.getHotelOwnerDetails(req.params.id)
+// Get Admin Details
+export const getAdminDetails = async (req, res, next) => {
+	await AdminService.getAdminDetails(req.params.id)
 		.then((data) => {
 			req.handleResponse.successRespond(res)(data);
 			next();
@@ -77,20 +70,15 @@ export const getHotelOwnerDetails = async (req, res, next) => {
 		});
 };
 
-// Edit Hotel Owner Details
-export const editHotelOwnerDetails = async (req, res, next) => {
+// Edit Admin Details
+export const editAdminDetails = async (req, res, next) => {
 	const user = {
-		ownerName: req.body.ownerName,
+		name: req.body.name,
 		email: req.body.email,
-		nic: req.body.nic,
-		contactNumber: req.body.contactNumber,
-		hotelName: req.body.hotelName,
-		hotelAddress: req.body.hotelAddress,
-		companyPhoneNumber: req.body.companyPhoneNumber,
-		companyRegNo: req.body.companyRegNo,
+		password: req.body.password,
 	};
 
-	await HotelOwnerService.editHotelOwnerDetails(req.params.id, user)
+	await AdminService.editAdminDetails(req.params.id, user)
 		.then((data) => {
 			req.handleResponse.successRespond(res)(data);
 			next();
@@ -101,9 +89,9 @@ export const editHotelOwnerDetails = async (req, res, next) => {
 		});
 };
 
-// Delete Hotel Owner
-export const deleteHotelOwner = async (req, res, next) => {
-	await HotelOwnerService.deleteHotelOwner(req.params.id)
+// Get All Hotel Owners
+export const getAllHotelOwners = async (req, res, next) => {
+	await AdminService.getAllHotelOwners()
 		.then((data) => {
 			req.handleResponse.successRespond(res)(data);
 			next();
